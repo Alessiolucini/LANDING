@@ -133,7 +133,7 @@ include 'includes/header.php';
                             const data = Object.fromEntries(formData.entries());
 
                             try {
-                                const response = await fetch('https://intuifypersonale-n8n.oqlfv4.easypanel.host/webhook/956c42bd-c09e-418c-a078-53877557b5d4', {
+                                const response = await fetch('https://intuifypersonale-n8n.oqlfv4.easypanel.host/webhook-test/956c42bd-c09e-418c-a078-53877557b5d4', {
                                     method: 'POST',
                                     headers: {
                                         'Content-Type': 'application/json',
