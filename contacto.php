@@ -32,7 +32,9 @@ include 'includes/header.php';
             <!-- Form -->
             <div class="lg:col-span-3">
                 <div class="bg-dark-700 rounded-2xl p-8 lg:p-10 border border-white/5">
-                    <form action="#" method="POST" class="space-y-6">
+                    <div id="contact-feedback" class="hidden mb-6 p-4 rounded-xl text-center"></div>
+
+                    <form id="contact-form" class="space-y-6">
                         <!-- Company Name -->
                         <div>
                             <label for="empresa" class="block text-sm font-medium text-gray-300 mb-2">
@@ -98,13 +100,66 @@ include 'includes/header.php';
 
                         <!-- Submit Button -->
                         <div>
-                            <button type="submit"
-                                class="w-full sm:w-auto px-8 py-4 text-base font-semibold text-white btn-gradient rounded-xl">
-                                <i class="fas fa-paper-plane mr-2"></i>
-                                Enviar mensaje
+                            <button type="submit" id="submit-btn"
+                                class="w-full sm:w-auto px-8 py-4 text-base font-semibold text-white btn-gradient rounded-xl flex items-center justify-center min-w-[200px]">
+                                <span id="btn-text" class="flex items-center">
+                                    <i class="fas fa-paper-plane mr-2"></i>
+                                    Enviar mensaje
+                                </span>
+                                <span id="btn-spinner" class="hidden">
+                                    <i class="fas fa-circle-notch fa-spin"></i>
+                                </span>
                             </button>
                         </div>
                     </form>
+
+                    <script>
+                        document.getElementById('contact-form').addEventListener('submit', async function (e) {
+                            e.preventDefault();
+
+                            const form = e.target;
+                            const feedback = document.getElementById('contact-feedback');
+                            const btnText = document.getElementById('btn-text');
+                            const btnSpinner = document.getElementById('btn-spinner');
+                            const submitBtn = document.getElementById('submit-btn');
+
+                            // Visual loading state
+                            submitBtn.disabled = true;
+                            btnText.classList.add('hidden');
+                            btnSpinner.classList.remove('hidden');
+                            feedback.classList.add('hidden');
+
+                            const formData = new FormData(form);
+                            const data = Object.fromEntries(formData.entries());
+
+                            try {
+                                const response = await fetch('https://intuifypersonale-n8n.oqlfv4.easypanel.host/webhook/956c42bd-c09e-418c-a078-53877557b5d4', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                    },
+                                    body: JSON.stringify(data),
+                                });
+
+                                if (response.ok) {
+                                    feedback.textContent = '¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.';
+                                    feedback.className = 'mb-6 p-4 rounded-xl text-center bg-green-500/10 text-green-400 border border-green-500/20';
+                                    feedback.classList.remove('hidden');
+                                    form.reset();
+                                } else {
+                                    throw new Error('Error en el servidor');
+                                }
+                            } catch (error) {
+                                feedback.textContent = 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde o escríbenos a info@transiq.io';
+                                feedback.className = 'mb-6 p-4 rounded-xl text-center bg-red-500/10 text-red-400 border border-red-500/20';
+                                feedback.classList.remove('hidden');
+                            } finally {
+                                submitBtn.disabled = false;
+                                btnText.classList.remove('hidden');
+                                btnSpinner.classList.add('hidden');
+                            }
+                        });
+                    </script>
                 </div>
             </div>
 
