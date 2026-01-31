@@ -208,25 +208,7 @@ include 'includes/header.php';
 
         </div>
 
-        <!-- Extra Credits -->
-        <div class="mt-12 bg-dark-700/50 rounded-2xl p-8 border border-white/5">
-            <div class="max-w-3xl mx-auto text-center">
-                <h3 class="text-xl font-semibold mb-4">¿Necesitas más?</h3>
-                <p class="text-gray-400 mb-6">
-                    Puedes adquirir créditos adicionales en cualquier momento sin cambiar de plan.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-6">
-                    <div class="bg-dark-800 rounded-xl px-6 py-4 border border-white/5">
-                        <div class="text-2xl font-bold text-accent mb-1">€1,50</div>
-                        <div class="text-sm text-gray-500">por CMR extra</div>
-                    </div>
-                    <div class="bg-dark-800 rounded-xl px-6 py-4 border border-white/5">
-                        <div class="text-2xl font-bold text-accent mb-1">€0,80</div>
-                        <div class="text-sm text-gray-500">por Proforma extra</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 </section>
 
