@@ -23,9 +23,9 @@ $translations = [
     // Hero Section
     'hero_title_1' => 'CMR corrects en quelques secondes.',
     'hero_title_2' => 'Sans erreurs. Sans attente.',
-    'hero_desc_1' => 'Chaque jour, nous recevons des CMR mal remplis et devons demander d\'attendre.',
-    'hero_desc_2' => 'TransiQ automatise tout :',
-    'hero_desc_3' => 'téléchargez la proforma et générez le CMR correct.',
+    'hero_desc_1' => 'La première plateforme au monde qui automatise les CMR avec l\'IA.',
+    'hero_desc_2' => 'Téléchargez votre proforma,',
+    'hero_desc_3' => 'et en quelques secondes vous avez le CMR parfait. Aussi simple que ça.',
     'hero_btn_register' => 'S\'inscrire',
     'hero_btn_demo' => 'Demander une démo',
     'hero_trust_secure' => 'Données sécurisées',

@@ -23,9 +23,9 @@ $translations = [
     // Hero Section
     'hero_title_1' => 'Korrekte CMR in Sekunden.',
     'hero_title_2' => 'Keine Fehler. Kein Warten.',
-    'hero_desc_1' => 'Jeden Tag erhalten wir schlecht ausgefüllte CMR und müssen um Geduld bitten.',
-    'hero_desc_2' => 'TransiQ automatisiert alles:',
-    'hero_desc_3' => 'laden Sie die Proforma hoch und generieren Sie den korrekten CMR.',
+    'hero_desc_1' => 'Die weltweit erste Plattform, die CMR mit KI automatisiert.',
+    'hero_desc_2' => 'Laden Sie Ihre Proforma hoch,',
+    'hero_desc_3' => 'und in Sekunden haben Sie den perfekten CMR. So einfach.',
     'hero_btn_register' => 'Registrieren',
     'hero_btn_demo' => 'Demo anfordern',
     'hero_trust_secure' => 'Sichere Daten',
