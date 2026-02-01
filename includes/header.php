@@ -2,7 +2,7 @@
 // Language detection and loading
 function detectLanguage()
 {
-    $supported = ['es', 'it', 'en'];
+    $supported = ['es', 'it', 'en', 'fr', 'pt', 'de'];
     $default = 'es';
 
     if (!isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
