@@ -127,10 +127,13 @@ $current_page = $current_page ?? 'inicio';
                 <!-- Desktop Buttons -->
                 <div class="hidden lg:flex items-center space-x-4">
                     <a href="https://app.transiq.net/login"
+                        onclick="event.preventDefault(); window.open(this.href, 'Login', 'width=500,height=600,left=' + (screen.width/2-250) + ',top=' + (screen.height/2-300));"
                         class="px-4 py-2 text-sm font-medium text-white border border-white/20 rounded-lg hover:bg-white/5 transition-all">
                         Login
                     </a>
-                    <a href="https://app.transiq.net/register" class="px-5 py-2.5 text-sm font-medium text-white btn-gradient rounded-lg">
+                    <a href="https://app.transiq.net/register"
+                        onclick="event.preventDefault(); window.open(this.href, 'Register', 'width=500,height=600,left=' + (screen.width/2-250) + ',top=' + (screen.height/2-300));"
+                        class="px-5 py-2.5 text-sm font-medium text-white btn-gradient rounded-lg">
                         Registrarse
                     </a>
                 </div>
@@ -169,10 +172,12 @@ $current_page = $current_page ?? 'inicio';
             </div>
             <div class="p-4 border-t border-white/10 space-y-3">
                 <a href="https://app.transiq.net/login"
+                    onclick="event.preventDefault(); window.open(this.href, 'Login', 'width=500,height=600,left=' + (screen.width/2-250) + ',top=' + (screen.height/2-300));"
                     class="block w-full px-4 py-3 text-center text-sm font-medium text-white border border-white/20 rounded-lg hover:bg-white/5 transition-all">
                     Login
                 </a>
                 <a href="https://app.transiq.net/register"
+                    onclick="event.preventDefault(); window.open(this.href, 'Register', 'width=500,height=600,left=' + (screen.width/2-250) + ',top=' + (screen.height/2-300));"
                     class="block w-full px-4 py-3 text-center text-sm font-medium text-white btn-gradient rounded-lg">
                     Registrarse
                 </a>

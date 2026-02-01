@@ -32,6 +32,7 @@ include 'includes/header.php';
 
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="https://app.transiq.net/register"
+                        onclick="event.preventDefault(); window.open(this.href, 'Register', 'width=500,height=600,left=' + (screen.width/2-250) + ',top=' + (screen.height/2-300));"
                         class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white btn-gradient rounded-xl">
                         <i class="fas fa-rocket mr-2"></i>
                         Registrarse
@@ -320,6 +321,7 @@ include 'includes/header.php';
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://app.transiq.net/register"
+                onclick="event.preventDefault(); window.open(this.href, 'Register', 'width=500,height=600,left=' + (screen.width/2-250) + ',top=' + (screen.height/2-300));"
                 class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white btn-gradient rounded-xl">
                 <i class="fas fa-rocket mr-2"></i>
                 Registrarse ahora
