@@ -130,7 +130,7 @@ $current_page = $current_page ?? 'inicio';
                         class="px-4 py-2 text-sm font-medium text-white border border-white/20 rounded-lg hover:bg-white/5 transition-all">
                         Login
                     </a>
-                    <a href="#" class="px-5 py-2.5 text-sm font-medium text-white btn-gradient rounded-lg">
+                    <a href="https://app.transiq.net/register" class="px-5 py-2.5 text-sm font-medium text-white btn-gradient rounded-lg">
                         Registrarse
                     </a>
                 </div>
@@ -172,7 +172,7 @@ $current_page = $current_page ?? 'inicio';
                     class="block w-full px-4 py-3 text-center text-sm font-medium text-white border border-white/20 rounded-lg hover:bg-white/5 transition-all">
                     Login
                 </a>
-                <a href="#"
+                <a href="https://app.transiq.net/register"
                     class="block w-full px-4 py-3 text-center text-sm font-medium text-white btn-gradient rounded-lg">
                     Registrarse
                 </a>
