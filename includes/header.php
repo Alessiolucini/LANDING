@@ -126,7 +126,7 @@ $current_page = $current_page ?? 'inicio';
 
                 <!-- Desktop Buttons -->
                 <div class="hidden lg:flex items-center space-x-4">
-                    <a href="#"
+                    <a href="https://app.transiq.net/login"
                         class="px-4 py-2 text-sm font-medium text-white border border-white/20 rounded-lg hover:bg-white/5 transition-all">
                         Login
                     </a>
@@ -168,7 +168,7 @@ $current_page = $current_page ?? 'inicio';
                     class="block px-4 py-3 text-base font-medium <?php echo $current_page === 'contacto' ? 'text-accent bg-accent/10' : 'text-gray-300 hover:text-white hover:bg-white/5'; ?> rounded-lg transition-all">Contacto</a>
             </div>
             <div class="p-4 border-t border-white/10 space-y-3">
-                <a href="#"
+                <a href="https://app.transiq.net/login"
                     class="block w-full px-4 py-3 text-center text-sm font-medium text-white border border-white/20 rounded-lg hover:bg-white/5 transition-all">
                     Login
                 </a>
