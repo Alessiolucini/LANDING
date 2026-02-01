@@ -19,13 +19,14 @@ $current_page = $current_page ?? 'inicio';
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1a3f6e',
-                        accent: '#3b82f6',
+                        primary: '#6b21a8',
+                        accent: '#a855f7',
+                        pink: '#f472b6',
                         dark: {
-                            900: '#0a0a0f',
-                            800: '#12121a',
-                            700: '#1a1a24',
-                            600: '#24242e',
+                            900: '#09090b',
+                            800: '#18181b',
+                            700: '#27272a',
+                            600: '#3f3f46',
                         }
                     },
                     fontFamily: {
@@ -52,7 +53,7 @@ $current_page = $current_page ?? 'inicio';
 
         body {
             font-family: 'Inter', system-ui, sans-serif;
-            background-color: #0a0a0f;
+            background-color: #09090b;
             color: #ffffff;
         }
 
@@ -62,21 +63,21 @@ $current_page = $current_page ?? 'inicio';
         }
 
         .gradient-text {
-            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+            background: linear-gradient(135deg, #a855f7 0%, #f472b6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .btn-gradient {
-            background: linear-gradient(135deg, #1a3f6e 0%, #3b82f6 100%);
+            background: linear-gradient(135deg, #6b21a8 0%, #a855f7 100%);
             transition: all 0.3s ease;
         }
 
         .btn-gradient:hover {
-            background: linear-gradient(135deg, #234d85 0%, #60a5fa 100%);
+            background: linear-gradient(135deg, #7c3aed 0%, #c084fc 100%);
             transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 40px rgba(168, 85, 247, 0.3);
         }
 
         .card-glow {
@@ -84,7 +85,7 @@ $current_page = $current_page ?? 'inicio';
         }
 
         .card-glow:hover {
-            box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.15);
             transform: translateY(-4px);
         }
 
