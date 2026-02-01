@@ -1,8 +1,5 @@
 <?php
-$page_title = "Contacto | TransiQ - Solicita información o demo";
-$page_description = "Contacta con el equipo de TransiQ para solicitar una demo, información sobre planes o soporte técnico.";
 $current_page = "contacto";
-
 include 'includes/header.php';
 ?>
 
@@ -12,14 +9,13 @@ include 'includes/header.php';
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <span
             class="inline-block px-4 py-1.5 text-xs font-semibold text-accent uppercase tracking-wider bg-accent/10 rounded-full mb-4">
-            Estamos aquí para ayudarte
+            <?php echo t('contact_badge'); ?>
         </span>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-            <span class="gradient-text">Contacta</span> con nosotros
+            <span class="gradient-text"><?php echo t('contact_title_1'); ?></span> <?php echo t('contact_title_2'); ?>
         </h1>
         <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-            ¿Tienes preguntas? ¿Quieres una demo personalizada? Rellena el formulario y te respondemos en 24h
-            laborables.
+            <?php echo t('contact_subtitle'); ?>
         </p>
     </div>
 </section>
@@ -38,64 +34,64 @@ include 'includes/header.php';
                         <!-- Company Name -->
                         <div>
                             <label for="empresa" class="block text-sm font-medium text-gray-300 mb-2">
-                                Nombre de empresa <span class="text-red-400">*</span>
+                                <?php echo t('contact_label_company'); ?> <span class="text-red-400">*</span>
                             </label>
                             <input type="text" id="empresa" name="empresa" required
                                 class="w-full px-4 py-3 bg-dark-800 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                                placeholder="Tu empresa S.L.">
+                                placeholder="<?php echo t('contact_placeholder_company'); ?>">
                         </div>
 
                         <!-- Full Name -->
                         <div>
                             <label for="nombre" class="block text-sm font-medium text-gray-300 mb-2">
-                                Nombre y apellidos <span class="text-red-400">*</span>
+                                <?php echo t('contact_label_name'); ?> <span class="text-red-400">*</span>
                             </label>
                             <input type="text" id="nombre" name="nombre" required
                                 class="w-full px-4 py-3 bg-dark-800 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                                placeholder="Juan García López">
+                                placeholder="<?php echo t('contact_placeholder_name'); ?>">
                         </div>
 
                         <!-- Email & Phone Row -->
                         <div class="grid sm:grid-cols-2 gap-6">
                             <div>
                                 <label for="email" class="block text-sm font-medium text-gray-300 mb-2">
-                                    Email <span class="text-red-400">*</span>
+                                    <?php echo t('contact_label_email'); ?> <span class="text-red-400">*</span>
                                 </label>
                                 <input type="email" id="email" name="email" required
                                     class="w-full px-4 py-3 bg-dark-800 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                                    placeholder="juan@empresa.com">
+                                    placeholder="<?php echo t('contact_placeholder_email'); ?>">
                             </div>
                             <div>
                                 <label for="telefono" class="block text-sm font-medium text-gray-300 mb-2">
-                                    Teléfono
+                                    <?php echo t('contact_label_phone'); ?>
                                 </label>
                                 <input type="tel" id="telefono" name="telefono"
                                     class="w-full px-4 py-3 bg-dark-800 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                                    placeholder="+34 600 000 000">
+                                    placeholder="<?php echo t('contact_placeholder_phone'); ?>">
                             </div>
                         </div>
 
                         <!-- Subject Select -->
                         <div>
                             <label for="asunto" class="block text-sm font-medium text-gray-300 mb-2">
-                                ¿En qué podemos ayudarte?
+                                <?php echo t('contact_label_subject'); ?>
                             </label>
                             <select id="asunto" name="asunto"
                                 class="w-full px-4 py-3 bg-dark-800 border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
-                                <option value="demo">Quiero una demo</option>
-                                <option value="info">Quiero información</option>
-                                <option value="soporte">Soporte técnico</option>
+                                <option value="demo"><?php echo t('contact_option_demo'); ?></option>
+                                <option value="info"><?php echo t('contact_option_info'); ?></option>
+                                <option value="soporte"><?php echo t('contact_option_support'); ?></option>
                             </select>
                         </div>
 
                         <!-- Message -->
                         <div>
                             <label for="mensaje" class="block text-sm font-medium text-gray-300 mb-2">
-                                Mensaje
+                                <?php echo t('contact_label_message'); ?>
                             </label>
                             <textarea id="mensaje" name="mensaje" rows="5"
                                 class="w-full px-4 py-3 bg-dark-800 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
-                                placeholder="Cuéntanos más sobre tu situación y qué necesitas..."></textarea>
+                                placeholder="<?php echo t('contact_placeholder_message'); ?>"></textarea>
                         </div>
 
                         <!-- Submit Button -->
@@ -104,7 +100,7 @@ include 'includes/header.php';
                                 class="w-full sm:w-auto px-8 py-4 text-base font-semibold text-white btn-gradient rounded-xl flex items-center justify-center min-w-[200px]">
                                 <span id="btn-text" class="flex items-center">
                                     <i class="fas fa-paper-plane mr-2"></i>
-                                    Enviar mensaje
+                                    <?php echo t('contact_btn_send'); ?>
                                 </span>
                                 <span id="btn-spinner" class="hidden">
                                     <i class="fas fa-circle-notch fa-spin"></i>
@@ -114,6 +110,10 @@ include 'includes/header.php';
                     </form>
 
                     <script>
+                        // Translation strings for JavaScript
+                        const contactSuccessMsg = <?php echo json_encode(t('contact_success')); ?>;
+                        const contactErrorMsg = <?php echo json_encode(t('contact_error')); ?>;
+
                         document.getElementById('contact-form').addEventListener('submit', async function (e) {
                             e.preventDefault();
 
@@ -142,7 +142,7 @@ include 'includes/header.php';
                                 });
 
                                 if (response.ok) {
-                                    feedback.textContent = '¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.';
+                                    feedback.textContent = contactSuccessMsg;
                                     feedback.className = 'mb-6 p-4 rounded-xl text-center bg-green-500/10 text-green-400 border border-green-500/20';
                                     feedback.classList.remove('hidden');
                                     form.reset();
@@ -150,7 +150,7 @@ include 'includes/header.php';
                                     throw new Error('Error en el servidor');
                                 }
                             } catch (error) {
-                                feedback.textContent = 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde o escríbenos a info@transiq.net';
+                                feedback.textContent = contactErrorMsg;
                                 feedback.className = 'mb-6 p-4 rounded-xl text-center bg-red-500/10 text-red-400 border border-red-500/20';
                                 feedback.classList.remove('hidden');
                             } finally {
@@ -172,10 +172,10 @@ include 'includes/header.php';
                             <i class="fas fa-clock text-xl text-accent"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold mb-2">Respuesta rápida</h3>
+                            <h3 class="text-lg font-semibold mb-2"><?php echo t('contact_fast_title'); ?></h3>
                             <p class="text-gray-400 text-sm">
-                                Respondemos a todas las consultas en menos de <strong class="text-white">24 horas
-                                    laborables</strong>.
+                                <?php echo t('contact_fast_desc'); ?> <strong
+                                    class="text-white"><?php echo t('contact_fast_hours'); ?></strong>.
                             </p>
                         </div>
                     </div>
@@ -188,7 +188,7 @@ include 'includes/header.php';
                             <i class="fas fa-envelope text-xl text-accent"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold mb-2">Email directo</h3>
+                            <h3 class="text-lg font-semibold mb-2"><?php echo t('contact_email_title'); ?></h3>
                             <a href="mailto:info@transiq.net" class="text-accent hover:underline">
                                 info@transiq.net
                             </a>
@@ -203,13 +203,13 @@ include 'includes/header.php';
                             <i class="fas fa-video text-xl text-accent"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold mb-2">Demo personalizada</h3>
+                            <h3 class="text-lg font-semibold mb-2"><?php echo t('contact_demo_title'); ?></h3>
                             <p class="text-gray-400 text-sm mb-4">
-                                Te mostramos cómo TransiQ puede automatizar tu flujo de CMR en 15 minutos.
+                                <?php echo t('contact_demo_desc'); ?>
                             </p>
                             <span
                                 class="inline-block px-4 py-2 text-xs font-medium text-accent bg-accent/10 rounded-lg">
-                                Sin compromiso
+                                <?php echo t('contact_demo_badge'); ?>
                             </span>
                         </div>
                     </div>
@@ -218,10 +218,10 @@ include 'includes/header.php';
                 <!-- FAQ Link -->
                 <div class="text-center pt-4">
                     <p class="text-sm text-gray-500">
-                        ¿Buscas información sobre precios?
+                        <?php echo t('contact_pricing_link'); ?>
                     </p>
                     <a href="precios.php" class="inline-flex items-center text-accent hover:underline mt-2">
-                        Ver planes y precios
+                        <?php echo t('contact_pricing_btn'); ?>
                         <i class="fas fa-arrow-right ml-2 text-xs"></i>
                     </a>
                 </div>

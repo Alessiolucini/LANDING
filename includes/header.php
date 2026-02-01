@@ -1,16 +1,48 @@
 <?php
+// Language detection and loading
+function detectLanguage()
+{
+    $supported = ['es', 'it', 'en'];
+    $default = 'es';
+
+    if (!isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+        return $default;
+    }
+
+    $browserLang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+    return in_array($browserLang, $supported) ? $browserLang : $default;
+}
+
+$current_lang = detectLanguage();
+include __DIR__ . '/lang/' . $current_lang . '.php';
+
+// Translation helper function
+function t($key)
+{
+    global $translations;
+    return $translations[$key] ?? $key;
+}
+
 // Default page if not set
 $current_page = $current_page ?? 'inicio';
+
+// Set page title and description based on current page
+$page_titles = [
+    'inicio' => ['meta_title_home', 'meta_desc_home'],
+    'precios' => ['meta_title_precios', 'meta_desc_precios'],
+    'contacto' => ['meta_title_contacto', 'meta_desc_contacto'],
+];
+$page_title = t($page_titles[$current_page][0] ?? 'meta_title_home');
+$page_description = t($page_titles[$current_page][1] ?? 'meta_desc_home');
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="<?php echo $current_lang; ?>">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $page_title ?? 'TransiQ | CMR automáticos con IA'; ?></title>
-    <meta name="description"
-        content="<?php echo $page_description ?? 'TransiQ automatiza la creación de documentos CMR en el sector automotriz usando IA. De proforma a CMR correcto en segundos.'; ?>">
+    <title><?php echo $page_title; ?></title>
+    <meta name="description" content="<?php echo $page_description; ?>">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -113,26 +145,26 @@ $current_page = $current_page ?? 'inicio';
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center space-x-8">
                     <a href="index.php"
-                        class="text-sm font-medium <?php echo $current_page === 'inicio' ? 'text-accent' : 'text-gray-300 hover:text-white'; ?> transition-colors">Inicio</a>
+                        class="text-sm font-medium <?php echo $current_page === 'inicio' ? 'text-accent' : 'text-gray-300 hover:text-white'; ?> transition-colors"><?php echo t('nav_inicio'); ?></a>
                     <a href="index.php#como-funciona"
-                        class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Cómo funciona</a>
+                        class="text-sm font-medium text-gray-300 hover:text-white transition-colors"><?php echo t('nav_como_funciona'); ?></a>
                     <a href="index.php#por-que-transiq"
-                        class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Por qué TransiQ</a>
+                        class="text-sm font-medium text-gray-300 hover:text-white transition-colors"><?php echo t('nav_por_que'); ?></a>
                     <a href="precios.php"
-                        class="text-sm font-medium <?php echo $current_page === 'precios' ? 'text-accent' : 'text-gray-300 hover:text-white'; ?> transition-colors">Precios</a>
+                        class="text-sm font-medium <?php echo $current_page === 'precios' ? 'text-accent' : 'text-gray-300 hover:text-white'; ?> transition-colors"><?php echo t('nav_precios'); ?></a>
                     <a href="contacto.php"
-                        class="text-sm font-medium <?php echo $current_page === 'contacto' ? 'text-accent' : 'text-gray-300 hover:text-white'; ?> transition-colors">Contacto</a>
+                        class="text-sm font-medium <?php echo $current_page === 'contacto' ? 'text-accent' : 'text-gray-300 hover:text-white'; ?> transition-colors"><?php echo t('nav_contacto'); ?></a>
                 </div>
 
                 <!-- Desktop Buttons -->
                 <div class="hidden lg:flex items-center space-x-4">
                     <a href="https://app.transiq.net/login"
                         class="px-4 py-2 text-sm font-medium text-white border border-white/20 rounded-lg hover:bg-white/5 transition-all">
-                        Login
+                        <?php echo t('nav_login'); ?>
                     </a>
                     <a href="https://app.transiq.net/register"
                         class="px-5 py-2.5 text-sm font-medium text-white btn-gradient rounded-lg">
-                        Registrarse
+                        <?php echo t('nav_register'); ?>
                     </a>
                 </div>
 
@@ -156,26 +188,24 @@ $current_page = $current_page ?? 'inicio';
             </div>
             <div class="flex-1 py-6 px-4 space-y-2">
                 <a href="index.php"
-                    class="block px-4 py-3 text-base font-medium <?php echo $current_page === 'inicio' ? 'text-accent bg-accent/10' : 'text-gray-300 hover:text-white hover:bg-white/5'; ?> rounded-lg transition-all">Inicio</a>
+                    class="block px-4 py-3 text-base font-medium <?php echo $current_page === 'inicio' ? 'text-accent bg-accent/10' : 'text-gray-300 hover:text-white hover:bg-white/5'; ?> rounded-lg transition-all"><?php echo t('nav_inicio'); ?></a>
                 <a href="index.php#como-funciona"
-                    class="block px-4 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">Cómo
-                    funciona</a>
+                    class="block px-4 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all"><?php echo t('nav_como_funciona'); ?></a>
                 <a href="index.php#por-que-transiq"
-                    class="block px-4 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">Por
-                    qué TransiQ</a>
+                    class="block px-4 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all"><?php echo t('nav_por_que'); ?></a>
                 <a href="precios.php"
-                    class="block px-4 py-3 text-base font-medium <?php echo $current_page === 'precios' ? 'text-accent bg-accent/10' : 'text-gray-300 hover:text-white hover:bg-white/5'; ?> rounded-lg transition-all">Precios</a>
+                    class="block px-4 py-3 text-base font-medium <?php echo $current_page === 'precios' ? 'text-accent bg-accent/10' : 'text-gray-300 hover:text-white hover:bg-white/5'; ?> rounded-lg transition-all"><?php echo t('nav_precios'); ?></a>
                 <a href="contacto.php"
-                    class="block px-4 py-3 text-base font-medium <?php echo $current_page === 'contacto' ? 'text-accent bg-accent/10' : 'text-gray-300 hover:text-white hover:bg-white/5'; ?> rounded-lg transition-all">Contacto</a>
+                    class="block px-4 py-3 text-base font-medium <?php echo $current_page === 'contacto' ? 'text-accent bg-accent/10' : 'text-gray-300 hover:text-white hover:bg-white/5'; ?> rounded-lg transition-all"><?php echo t('nav_contacto'); ?></a>
             </div>
             <div class="p-4 border-t border-white/10 space-y-3">
                 <a href="https://app.transiq.net/login"
                     class="block w-full px-4 py-3 text-center text-sm font-medium text-white border border-white/20 rounded-lg hover:bg-white/5 transition-all">
-                    Login
+                    <?php echo t('nav_login'); ?>
                 </a>
                 <a href="https://app.transiq.net/register"
                     class="block w-full px-4 py-3 text-center text-sm font-medium text-white btn-gradient rounded-lg">
-                    Registrarse
+                    <?php echo t('nav_register'); ?>
                 </a>
             </div>
         </div>

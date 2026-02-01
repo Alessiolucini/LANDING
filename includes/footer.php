@@ -12,33 +12,40 @@
                     <img src="assets/images/logo.png" alt="TransiQ Logo" class="h-6 w-auto">
                 </a>
                 <p class="text-sm text-gray-400 leading-relaxed">
-                    AI-Powered Transport & Export Docs
+                    <?php echo t('footer_tagline'); ?>
                 </p>
                 <p class="text-sm text-gray-500">
-                    Automatiza la creación de documentos CMR en el sector automotriz.
+                    <?php echo t('footer_desc'); ?>
                 </p>
             </div>
 
             <!-- Navigation Links -->
             <div>
-                <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Navegación</h4>
+                <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+                    <?php echo t('footer_nav'); ?></h4>
                 <ul class="space-y-3">
-                    <li><a href="index.php" class="text-sm text-gray-400 hover:text-accent transition-colors">Inicio</a>
+                    <li><a href="index.php"
+                            class="text-sm text-gray-400 hover:text-accent transition-colors"><?php echo t('nav_inicio'); ?></a>
                     </li>
                     <li><a href="index.php#como-funciona"
-                            class="text-sm text-gray-400 hover:text-accent transition-colors">Cómo funciona</a></li>
+                            class="text-sm text-gray-400 hover:text-accent transition-colors"><?php echo t('nav_como_funciona'); ?></a>
+                    </li>
                     <li><a href="index.php#por-que-transiq"
-                            class="text-sm text-gray-400 hover:text-accent transition-colors">Por qué TransiQ</a></li>
+                            class="text-sm text-gray-400 hover:text-accent transition-colors"><?php echo t('nav_por_que'); ?></a>
+                    </li>
                     <li><a href="precios.php"
-                            class="text-sm text-gray-400 hover:text-accent transition-colors">Precios</a></li>
+                            class="text-sm text-gray-400 hover:text-accent transition-colors"><?php echo t('nav_precios'); ?></a>
+                    </li>
                     <li><a href="contacto.php"
-                            class="text-sm text-gray-400 hover:text-accent transition-colors">Contacto</a></li>
+                            class="text-sm text-gray-400 hover:text-accent transition-colors"><?php echo t('nav_contacto'); ?></a>
+                    </li>
                 </ul>
             </div>
 
             <!-- Contact & Demo -->
             <div>
-                <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Contacto</h4>
+                <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+                    <?php echo t('footer_contact'); ?></h4>
                 <ul class="space-y-3">
                     <li class="flex items-center space-x-3 text-sm text-gray-400">
                         <i class="fas fa-envelope text-accent"></i>
@@ -50,7 +57,7 @@
                     <a href="contacto.php"
                         class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-white btn-gradient rounded-lg">
                         <i class="fas fa-calendar-alt mr-2"></i>
-                        Solicitar demo
+                        <?php echo t('footer_btn_demo'); ?>
                     </a>
                 </div>
             </div>
@@ -61,12 +68,13 @@
             <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
                 <p class="text-sm text-gray-500">
                     &copy;
-                    <?php echo date('Y'); ?> TransiQ. Todos los derechos reservados.
+                    <?php echo date('Y'); ?> TransiQ. <?php echo t('footer_copyright'); ?>
                 </p>
                 <div class="flex items-center space-x-6">
-                    <a href="#" class="text-sm text-gray-500 hover:text-gray-400 transition-colors">Política de
-                        privacidad</a>
-                    <a href="#" class="text-sm text-gray-500 hover:text-gray-400 transition-colors">Términos de uso</a>
+                    <a href="#"
+                        class="text-sm text-gray-500 hover:text-gray-400 transition-colors"><?php echo t('footer_privacy'); ?></a>
+                    <a href="#"
+                        class="text-sm text-gray-500 hover:text-gray-400 transition-colors"><?php echo t('footer_terms'); ?></a>
                 </div>
             </div>
         </div>

@@ -1,8 +1,5 @@
 <?php
-$page_title = "TransiQ | CMR automáticos con IA";
-$page_description = "TransiQ automatiza la creación de documentos CMR en el sector automotriz usando IA. De proforma a CMR correcto en segundos.";
 $current_page = "inicio";
-
 include 'includes/header.php';
 ?>
 
@@ -20,13 +17,13 @@ include 'includes/header.php';
             <div class="space-y-8">
                 <div class="space-y-6">
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                        CMR correctos en segundos.
-                        <span class="gradient-text">Sin errores. Sin esperas.</span>
+                        <?php echo t('hero_title_1'); ?>
+                        <span class="gradient-text"><?php echo t('hero_title_2'); ?></span>
                     </h1>
                     <p class="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-xl">
-                        Cada día recibimos CMR mal rellenados y tenemos que pedir que esperen.
-                        <span class="text-white font-medium">TransiQ lo automatiza:</span> subes la proforma y generas
-                        el CMR correcto.
+                        <?php echo t('hero_desc_1'); ?>
+                        <span class="text-white font-medium"><?php echo t('hero_desc_2'); ?></span>
+                        <?php echo t('hero_desc_3'); ?>
                     </p>
                 </div>
 
@@ -34,12 +31,12 @@ include 'includes/header.php';
                     <a href="https://app.transiq.net/register"
                         class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white btn-gradient rounded-xl">
                         <i class="fas fa-rocket mr-2"></i>
-                        Registrarse
+                        <?php echo t('hero_btn_register'); ?>
                     </a>
                     <a href="contacto.php"
                         class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white border border-white/20 rounded-xl hover:bg-white/5 transition-all">
                         <i class="fas fa-calendar-alt mr-2"></i>
-                        Solicitar demo
+                        <?php echo t('hero_btn_demo'); ?>
                     </a>
                 </div>
 
@@ -47,11 +44,11 @@ include 'includes/header.php';
                 <div class="flex items-center space-x-6 pt-4">
                     <div class="flex items-center space-x-2 text-sm text-gray-500">
                         <i class="fas fa-shield-alt text-accent"></i>
-                        <span>Datos seguros</span>
+                        <span><?php echo t('hero_trust_secure'); ?></span>
                     </div>
                     <div class="flex items-center space-x-2 text-sm text-gray-500">
                         <i class="fas fa-bolt text-accent"></i>
-                        <span>Resultados en segundos</span>
+                        <span><?php echo t('hero_trust_fast'); ?></span>
                     </div>
                 </div>
             </div>
@@ -75,13 +72,13 @@ include 'includes/header.php';
         <div class="text-center max-w-3xl mx-auto mb-16">
             <span
                 class="inline-block px-4 py-1.5 text-xs font-semibold text-accent uppercase tracking-wider bg-accent/10 rounded-full mb-4">
-                Proceso simple
+                <?php echo t('how_badge'); ?>
             </span>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                ¿Cómo <span class="gradient-text">funciona</span>?
+                <?php echo t('how_title_1'); ?> <span class="gradient-text"><?php echo t('how_title_2'); ?></span>?
             </h2>
             <p class="text-lg text-gray-400">
-                En tres sencillos pasos, tu CMR estará listo para enviar.
+                <?php echo t('how_subtitle'); ?>
             </p>
         </div>
 
@@ -97,9 +94,8 @@ include 'includes/header.php';
                     <div
                         class="absolute -top-3 -right-3 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-sm font-bold text-white">
                         1</div>
-                    <h3 class="text-xl font-semibold mb-3">Subes la proforma</h3>
-                    <p class="text-gray-400">Carga tu documento PDF o imagen de la proforma. El sistema acepta múltiples
-                        formatos.</p>
+                    <h3 class="text-xl font-semibold mb-3"><?php echo t('how_step1_title'); ?></h3>
+                    <p class="text-gray-400"><?php echo t('how_step1_desc'); ?></p>
                 </div>
             </div>
 
@@ -113,9 +109,8 @@ include 'includes/header.php';
                     <div
                         class="absolute -top-3 -right-3 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-sm font-bold text-white">
                         2</div>
-                    <h3 class="text-xl font-semibold mb-3">IA extrae los datos</h3>
-                    <p class="text-gray-400">Nuestra IA identifica y extrae automáticamente proveedor, cliente, VIN,
-                        modelos y más.</p>
+                    <h3 class="text-xl font-semibold mb-3"><?php echo t('how_step2_title'); ?></h3>
+                    <p class="text-gray-400"><?php echo t('how_step2_desc'); ?></p>
                 </div>
             </div>
 
@@ -129,9 +124,8 @@ include 'includes/header.php';
                     <div
                         class="absolute -top-3 -right-3 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-sm font-bold text-white">
                         3</div>
-                    <h3 class="text-xl font-semibold mb-3">Generas el CMR</h3>
-                    <p class="text-gray-400">Descarga el CMR en PDF listo para enviar o compártelo directamente desde la
-                        plataforma.</p>
+                    <h3 class="text-xl font-semibold mb-3"><?php echo t('how_step3_title'); ?></h3>
+                    <p class="text-gray-400"><?php echo t('how_step3_desc'); ?></p>
                 </div>
             </div>
         </div>
@@ -164,10 +158,11 @@ include 'includes/header.php';
                 <div>
                     <span
                         class="inline-block px-4 py-1.5 text-xs font-semibold text-accent uppercase tracking-wider bg-accent/10 rounded-full mb-4">
-                        La diferencia
+                        <?php echo t('why_badge'); ?>
                     </span>
                     <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                        ¿Por qué <span class="gradient-text">TransiQ</span>?
+                        <?php echo t('why_title_1'); ?> <span
+                            class="gradient-text"><?php echo t('why_title_2'); ?></span>?
                     </h2>
                 </div>
 
@@ -178,44 +173,50 @@ include 'includes/header.php';
                             class="flex-shrink-0 w-6 h-6 bg-accent/20 rounded-full flex items-center justify-center mt-0.5">
                             <i class="fas fa-check text-accent text-xs"></i>
                         </div>
-                        <span class="text-lg text-gray-300">Evita errores diarios en CMR</span>
+                        <span class="text-lg text-gray-300"><?php echo t('why_benefit_1'); ?></span>
                     </li>
                     <li class="flex items-start space-x-4">
                         <div
                             class="flex-shrink-0 w-6 h-6 bg-accent/20 rounded-full flex items-center justify-center mt-0.5">
                             <i class="fas fa-check text-accent text-xs"></i>
                         </div>
-                        <span class="text-lg text-gray-300">Reduce tiempos de corrección y esperas</span>
+                        <span class="text-lg text-gray-300"><?php echo t('why_benefit_2'); ?></span>
                     </li>
                     <li class="flex items-start space-x-4">
                         <div
                             class="flex-shrink-0 w-6 h-6 bg-accent/20 rounded-full flex items-center justify-center mt-0.5">
                             <i class="fas fa-check text-accent text-xs"></i>
                         </div>
-                        <span class="text-lg text-gray-300">Datos en la posición correcta del CMR</span>
+                        <span class="text-lg text-gray-300"><?php echo t('why_benefit_3'); ?></span>
                     </li>
                     <li class="flex items-start space-x-4">
                         <div
                             class="flex-shrink-0 w-6 h-6 bg-accent/20 rounded-full flex items-center justify-center mt-0.5">
                             <i class="fas fa-check text-accent text-xs"></i>
                         </div>
-                        <span class="text-lg text-gray-300">Proceso automático + revisión antes de generar</span>
+                        <span class="text-lg text-gray-300"><?php echo t('why_benefit_4'); ?></span>
                     </li>
                 </ul>
 
                 <!-- KPI Blocks -->
                 <div class="grid grid-cols-3 gap-4 pt-6">
                     <div class="bg-dark-700 rounded-xl p-4 text-center border border-white/5">
-                        <div class="text-2xl sm:text-3xl font-bold gradient-text mb-1">&lt; 30s</div>
-                        <div class="text-xs sm:text-sm text-gray-500">CMR generado</div>
+                        <div class="text-2xl sm:text-3xl font-bold gradient-text mb-1">
+                            <?php echo t('why_kpi_1_value'); ?>
+                        </div>
+                        <div class="text-xs sm:text-sm text-gray-500"><?php echo t('why_kpi_1_label'); ?></div>
                     </div>
                     <div class="bg-dark-700 rounded-xl p-4 text-center border border-white/5">
-                        <div class="text-2xl sm:text-3xl font-bold gradient-text mb-1">-80%</div>
-                        <div class="text-xs sm:text-sm text-gray-500">Errores</div>
+                        <div class="text-2xl sm:text-3xl font-bold gradient-text mb-1">
+                            <?php echo t('why_kpi_2_value'); ?>
+                        </div>
+                        <div class="text-xs sm:text-sm text-gray-500"><?php echo t('why_kpi_2_label'); ?></div>
                     </div>
                     <div class="bg-dark-700 rounded-xl p-4 text-center border border-white/5">
-                        <div class="text-2xl sm:text-3xl font-bold gradient-text mb-1">-70%</div>
-                        <div class="text-xs sm:text-sm text-gray-500">Tiempo admin</div>
+                        <div class="text-2xl sm:text-3xl font-bold gradient-text mb-1">
+                            <?php echo t('why_kpi_3_value'); ?>
+                        </div>
+                        <div class="text-xs sm:text-sm text-gray-500"><?php echo t('why_kpi_3_label'); ?></div>
                     </div>
                 </div>
             </div>
@@ -230,13 +231,14 @@ include 'includes/header.php';
         <div class="text-center max-w-3xl mx-auto mb-16">
             <span
                 class="inline-block px-4 py-1.5 text-xs font-semibold text-accent uppercase tracking-wider bg-accent/10 rounded-full mb-4">
-                Funcionalidades
+                <?php echo t('features_badge'); ?>
             </span>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                Todo lo que <span class="gradient-text">necesitas</span>
+                <?php echo t('features_title_1'); ?> <span
+                    class="gradient-text"><?php echo t('features_title_2'); ?></span>
             </h2>
             <p class="text-lg text-gray-400">
-                Herramientas diseñadas para optimizar tu flujo de trabajo documental.
+                <?php echo t('features_subtitle'); ?>
             </p>
         </div>
 
@@ -247,8 +249,8 @@ include 'includes/header.php';
                 <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
                     <i class="fas fa-magic text-xl text-accent"></i>
                 </div>
-                <h3 class="text-lg font-semibold mb-2">Extracción automática</h3>
-                <p class="text-sm text-gray-400">IA que extrae datos de proformas: proveedor, cliente, VIN, modelos.</p>
+                <h3 class="text-lg font-semibold mb-2"><?php echo t('feature_1_title'); ?></h3>
+                <p class="text-sm text-gray-400"><?php echo t('feature_1_desc'); ?></p>
             </div>
 
             <!-- Feature 2 -->
@@ -256,9 +258,8 @@ include 'includes/header.php';
                 <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
                     <i class="fas fa-eye text-xl text-accent"></i>
                 </div>
-                <h3 class="text-lg font-semibold mb-2">Preview antes de generar</h3>
-                <p class="text-sm text-gray-400">Revisa y edita los datos extraídos antes de crear el documento final.
-                </p>
+                <h3 class="text-lg font-semibold mb-2"><?php echo t('feature_2_title'); ?></h3>
+                <p class="text-sm text-gray-400"><?php echo t('feature_2_desc'); ?></p>
             </div>
 
             <!-- Feature 3 -->
@@ -266,8 +267,8 @@ include 'includes/header.php';
                 <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
                     <i class="fas fa-layer-group text-xl text-accent"></i>
                 </div>
-                <h3 class="text-lg font-semibold mb-2">Multi-CMR por pedido</h3>
-                <p class="text-sm text-gray-400">Genera múltiples CMR desde un solo pedido con muchos vehículos.</p>
+                <h3 class="text-lg font-semibold mb-2"><?php echo t('feature_3_title'); ?></h3>
+                <p class="text-sm text-gray-400"><?php echo t('feature_3_desc'); ?></p>
             </div>
 
             <!-- Feature 4 -->
@@ -275,8 +276,8 @@ include 'includes/header.php';
                 <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
                     <i class="fas fa-sort text-xl text-accent"></i>
                 </div>
-                <h3 class="text-lg font-semibold mb-2">Reorganiza vehículos</h3>
-                <p class="text-sm text-gray-400">Ordena y agrupa los vehículos antes de generar cada CMR.</p>
+                <h3 class="text-lg font-semibold mb-2"><?php echo t('feature_4_title'); ?></h3>
+                <p class="text-sm text-gray-400"><?php echo t('feature_4_desc'); ?></p>
             </div>
 
             <!-- Feature 5 -->
@@ -284,9 +285,8 @@ include 'includes/header.php';
                 <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
                     <i class="fas fa-archive text-xl text-accent"></i>
                 </div>
-                <h3 class="text-lg font-semibold mb-2">Archivo de documentos</h3>
-                <p class="text-sm text-gray-400">Accede a tu historial completo de CMR generados en cualquier momento.
-                </p>
+                <h3 class="text-lg font-semibold mb-2"><?php echo t('feature_5_title'); ?></h3>
+                <p class="text-sm text-gray-400"><?php echo t('feature_5_desc'); ?></p>
             </div>
 
             <!-- Feature 6 -->
@@ -294,8 +294,8 @@ include 'includes/header.php';
                 <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
                     <i class="fas fa-download text-xl text-accent"></i>
                 </div>
-                <h3 class="text-lg font-semibold mb-2">PDF / Descarga / Envío</h3>
-                <p class="text-sm text-gray-400">Descarga en PDF o envía directamente el CMR desde la plataforma.</p>
+                <h3 class="text-lg font-semibold mb-2"><?php echo t('feature_6_title'); ?></h3>
+                <p class="text-sm text-gray-400"><?php echo t('feature_6_desc'); ?></p>
             </div>
         </div>
     </div>
@@ -311,23 +311,23 @@ include 'includes/header.php';
 
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Deja de corregir CMR cada día.
-            <span class="gradient-text">Automatiza tu flujo hoy.</span>
+            <?php echo t('cta_title_1'); ?>
+            <span class="gradient-text"><?php echo t('cta_title_2'); ?></span>
         </h2>
         <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
-            Únete a las empresas que ya generan CMR sin errores y sin esperas.
+            <?php echo t('cta_subtitle'); ?>
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://app.transiq.net/register"
                 class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white btn-gradient rounded-xl">
                 <i class="fas fa-rocket mr-2"></i>
-                Registrarse ahora
+                <?php echo t('cta_btn_register'); ?>
             </a>
             <a href="contacto.php"
                 class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white border border-white/20 rounded-xl hover:bg-white/5 transition-all">
                 <i class="fas fa-envelope mr-2"></i>
-                Contactar
+                <?php echo t('cta_btn_contact'); ?>
             </a>
         </div>
     </div>
