@@ -9,7 +9,7 @@
             <!-- Logo & Tagline -->
             <div class="space-y-4">
                 <a href="index.php" class="inline-block">
-                    <span class="text-2xl font-bold text-white">Transi<span class="text-accent">Q</span></span>
+                    <img src="assets/images/logo.png" alt="TransiQ Logo" class="h-6 w-auto">
                 </a>
                 <p class="text-sm text-gray-400 leading-relaxed">
                     AI-Powered Transport & Export Docs
