@@ -42,7 +42,8 @@
                 <ul class="space-y-3">
                     <li class="flex items-center space-x-3 text-sm text-gray-400">
                         <i class="fas fa-envelope text-accent"></i>
-                        <a href="mailto:info@transiq.io" class="hover:text-accent transition-colors">info@transiq.io</a>
+                        <a href="mailto:info@transiq.net"
+                            class="hover:text-accent transition-colors">info@transiq.net</a>
                     </li>
                 </ul>
                 <div class="mt-6">

@@ -150,7 +150,7 @@ include 'includes/header.php';
                                     throw new Error('Error en el servidor');
                                 }
                             } catch (error) {
-                                feedback.textContent = 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde o escríbenos a info@transiq.io';
+                                feedback.textContent = 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde o escríbenos a info@transiq.net';
                                 feedback.className = 'mb-6 p-4 rounded-xl text-center bg-red-500/10 text-red-400 border border-red-500/20';
                                 feedback.classList.remove('hidden');
                             } finally {
@@ -189,8 +189,8 @@ include 'includes/header.php';
                         </div>
                         <div>
                             <h3 class="text-lg font-semibold mb-2">Email directo</h3>
-                            <a href="mailto:info@transiq.io" class="text-accent hover:underline">
-                                info@transiq.io
+                            <a href="mailto:info@transiq.net" class="text-accent hover:underline">
+                                info@transiq.net
                             </a>
                         </div>
                     </div>

@@ -94,7 +94,7 @@ http://localhost/transiq/
 
 ## 📧 Contacto
 
-- **Email**: info@transiq.io
+- **Email**: info@transiq.net
 - **Web**: transiq.io
 
 ---
