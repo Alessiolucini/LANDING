@@ -88,8 +88,8 @@ class DotShaderBackground {
         const x = this.mouse.x * canvas.width;
         const y = (1 - this.mouse.y) * canvas.height;
 
-        // Draw bright spot at mouse position - LARGER and BRIGHTER
-        const gradient = ctx.createRadialGradient(x, y, 0, x, y, 80);
+        // Draw bright spot at mouse position
+        const gradient = ctx.createRadialGradient(x, y, 0, x, y, 35);
         gradient.addColorStop(0, 'rgba(255, 255, 255, 1.0)');
         gradient.addColorStop(0.3, 'rgba(255, 255, 255, 0.6)');
         gradient.addColorStop(0.6, 'rgba(255, 255, 255, 0.2)');
@@ -97,7 +97,7 @@ class DotShaderBackground {
 
         ctx.fillStyle = gradient;
         ctx.beginPath();
-        ctx.arc(x, y, 80, 0, Math.PI * 2);
+        ctx.arc(x, y, 35, 0, Math.PI * 2);
         ctx.fill();
 
         this.mouseTrailTexture.needsUpdate = true;
