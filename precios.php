@@ -59,7 +59,7 @@ include 'includes/header.php';
                     </li>
                 </ul>
 
-                <a href="#"
+                <a href="https://app.transiq.net/"
                     class="block w-full px-6 py-3 text-center text-sm font-medium text-white border border-white/20 rounded-xl hover:bg-white/5 transition-all">
                     <?php echo t('pricing_btn_start'); ?>
                 </a>
@@ -103,7 +103,7 @@ include 'includes/header.php';
                     </li>
                 </ul>
 
-                <a href="#"
+                <a href="https://app.transiq.net/"
                     class="block w-full px-6 py-3 text-center text-sm font-medium text-white border border-white/20 rounded-xl hover:bg-white/5 transition-all">
                     <?php echo t('pricing_btn_start'); ?>
                 </a>
@@ -157,7 +157,7 @@ include 'includes/header.php';
                     </li>
                 </ul>
 
-                <a href="#"
+                <a href="https://app.transiq.net/"
                     class="block w-full px-6 py-3 text-center text-sm font-semibold text-white btn-gradient rounded-xl">
                     <?php echo t('pricing_btn_start'); ?>
                 </a>
@@ -201,7 +201,7 @@ include 'includes/header.php';
                     </li>
                 </ul>
 
-                <a href="contacto.php"
+                <a href="https://app.transiq.net/"
                     class="block w-full px-6 py-3 text-center text-sm font-medium text-white border border-white/20 rounded-xl hover:bg-white/5 transition-all">
                     <?php echo t('pricing_btn_start'); ?>
                 </a>
