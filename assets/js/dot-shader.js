@@ -194,8 +194,8 @@ class DotShaderBackground {
                 accentColor: { value: new THREE.Color('#ec4899') },
                 mouseTrail: { value: this.mouseTrailTexture },
                 rotation: { value: 0 },
-                gridSize: { value: 60 },
-                dotOpacity: { value: 0.08 }
+                gridSize: { value: 100 },
+                dotOpacity: { value: 0.06 }
             },
             vertexShader,
             fragmentShader
