@@ -206,4 +206,9 @@ $translations = [
     'terms_termination_text' => 'TransiQ se reserva el derecho de suspender o cancelar cuentas que violen estos términos. El usuario puede cancelar su cuenta en cualquier momento desde la configuración de su perfil.',
     'terms_contact_title' => 'Contacto',
     'terms_contact_text' => 'Para cualquier consulta sobre estos términos, puedes contactarnos en:',
+
+    // Cookie Consent
+    'cookie_message' => 'Utilizamos cookies para mejorar tu experiencia, analizar el tráfico del sitio y personalizar el contenido. Al continuar navegando, aceptas nuestro uso de cookies. Más información en nuestra',
+    'cookie_accept' => 'Aceptar',
+    'cookie_decline' => 'Rechazar',
 ];

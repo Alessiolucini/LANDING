@@ -22,7 +22,8 @@
             <!-- Navigation Links -->
             <div>
                 <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-                    <?php echo t('footer_nav'); ?></h4>
+                    <?php echo t('footer_nav'); ?>
+                </h4>
                 <ul class="space-y-3">
                     <li><a href="index.php"
                             class="text-sm text-gray-400 hover:text-accent transition-colors"><?php echo t('nav_inicio'); ?></a>
@@ -45,7 +46,8 @@
             <!-- Contact & Demo -->
             <div>
                 <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-                    <?php echo t('footer_contact'); ?></h4>
+                    <?php echo t('footer_contact'); ?>
+                </h4>
                 <ul class="space-y-3">
                     <li class="flex items-center space-x-3 text-sm text-gray-400">
                         <i class="fas fa-envelope text-accent"></i>
@@ -71,15 +73,82 @@
                     <?php echo date('Y'); ?> TransiQ. <?php echo t('footer_copyright'); ?>
                 </p>
                 <div class="flex items-center space-x-6">
-                    <a href="#"
+                    <a href="privacy.php"
                         class="text-sm text-gray-500 hover:text-gray-400 transition-colors"><?php echo t('footer_privacy'); ?></a>
-                    <a href="#"
+                    <a href="terms.php"
                         class="text-sm text-gray-500 hover:text-gray-400 transition-colors"><?php echo t('footer_terms'); ?></a>
                 </div>
             </div>
         </div>
     </div>
 </footer>
+
+<!-- Cookie Consent Banner -->
+<div id="cookieConsent"
+    class="fixed bottom-0 left-0 right-0 z-50 transform translate-y-full transition-transform duration-500 ease-out">
+    <div class="bg-dark-800/95 backdrop-blur-lg border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex-1 text-center sm:text-left">
+                    <p class="text-sm text-gray-300">
+                        <i class="fas fa-cookie-bite text-accent mr-2"></i>
+                        <?php echo t('cookie_message'); ?>
+                        <a href="privacy.php"
+                            class="text-accent hover:text-pink underline transition-colors"><?php echo t('footer_privacy'); ?></a>
+                    </p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="declineCookies()"
+                        class="px-4 py-2 text-sm text-gray-400 hover:text-white border border-white/20 rounded-lg hover:bg-white/5 transition-all">
+                        <?php echo t('cookie_decline'); ?>
+                    </button>
+                    <button onclick="acceptCookies()"
+                        class="px-6 py-2 text-sm font-medium text-white btn-gradient rounded-lg transition-all">
+                        <?php echo t('cookie_accept'); ?>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Cookie Consent Logic
+    function showCookieBanner() {
+        const banner = document.getElementById('cookieConsent');
+        if (banner) {
+            setTimeout(() => {
+                banner.classList.remove('translate-y-full');
+            }, 1000);
+        }
+    }
+
+    function hideCookieBanner() {
+        const banner = document.getElementById('cookieConsent');
+        if (banner) {
+            banner.classList.add('translate-y-full');
+        }
+    }
+
+    function acceptCookies() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        hideCookieBanner();
+    }
+
+    function declineCookies() {
+        localStorage.setItem('cookieConsent', 'declined');
+        hideCookieBanner();
+    }
+
+    // Check on page load
+    document.addEventListener('DOMContentLoaded', function () {
+        const consent = localStorage.getItem('cookieConsent');
+        if (!consent) {
+            showCookieBanner();
+        }
+    });
+</script>
+
 </body>
 
 </html>

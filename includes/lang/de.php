@@ -206,4 +206,9 @@ $translations = [
     'terms_termination_text' => 'TransiQ behält sich das Recht vor, Konten zu sperren oder zu löschen, die gegen diese Bedingungen verstoßen. Nutzer können ihr Konto jederzeit in den Profileinstellungen löschen.',
     'terms_contact_title' => 'Kontakt',
     'terms_contact_text' => 'Bei Fragen zu diesen Bedingungen können Sie uns kontaktieren unter:',
+
+    // Cookie Consent
+    'cookie_message' => 'Wir verwenden Cookies, um Ihr Erlebnis zu verbessern, den Website-Traffic zu analysieren und Inhalte zu personalisieren. Wenn Sie weiter surfen, akzeptieren Sie unsere Verwendung von Cookies. Mehr Informationen in unserer',
+    'cookie_accept' => 'Akzeptieren',
+    'cookie_decline' => 'Ablehnen',
 ];
