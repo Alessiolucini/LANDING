@@ -105,7 +105,7 @@ include 'includes/header.php';
 
                 <a href="#"
                     class="block w-full px-6 py-3 text-center text-sm font-medium text-white border border-white/20 rounded-xl hover:bg-white/5 transition-all">
-                    <?php echo t('pricing_btn_choose'); ?>
+                    <?php echo t('pricing_btn_start'); ?>
                 </a>
             </div>
 
@@ -159,7 +159,7 @@ include 'includes/header.php';
 
                 <a href="#"
                     class="block w-full px-6 py-3 text-center text-sm font-semibold text-white btn-gradient rounded-xl">
-                    <?php echo t('pricing_btn_choose'); ?>
+                    <?php echo t('pricing_btn_start'); ?>
                 </a>
             </div>
 
@@ -203,7 +203,7 @@ include 'includes/header.php';
 
                 <a href="contacto.php"
                     class="block w-full px-6 py-3 text-center text-sm font-medium text-white border border-white/20 rounded-xl hover:bg-white/5 transition-all">
-                    <?php echo t('pricing_btn_contact'); ?>
+                    <?php echo t('pricing_btn_start'); ?>
                 </a>
             </div>
 
