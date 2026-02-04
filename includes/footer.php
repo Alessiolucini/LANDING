@@ -149,6 +149,10 @@
     });
 </script>
 
+<!-- Three.js for Dot Shader Background -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+<script src="assets/js/dot-shader.js"></script>
+
 </body>
 
 </html>

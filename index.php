@@ -5,13 +5,15 @@ include 'includes/header.php';
 
 <!-- Hero Section -->
 <section class="relative min-h-screen flex items-center pt-20 lg:pt-0 overflow-hidden">
-    <!-- Background gradient -->
-    <div class="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-800 to-primary/20"></div>
+    <!-- Dot Shader Background -->
+    <div id="dot-shader-bg" class="absolute inset-0 z-0"></div>
+    <!-- Fallback gradient (shows while shader loads) -->
+    <div class="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-800 to-primary/20 z-0"></div>
     <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-3xl">
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-3xl z-0">
     </div>
 
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 z-10">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <!-- Text Content -->
             <div class="space-y-8">
