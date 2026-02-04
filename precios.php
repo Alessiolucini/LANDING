@@ -4,9 +4,11 @@ include 'includes/header.php';
 ?>
 
 <!-- Pricing Hero -->
-<section class="relative pt-32 pb-16 lg:pt-40 lg:pb-20">
-    <div class="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-800 to-primary/10"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<section class="relative pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
+    <!-- Dot Shader Background -->
+    <div id="dot-shader-bg" class="absolute inset-0 z-0"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-800 to-primary/10 z-0"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
         <span
             class="inline-block px-4 py-1.5 text-xs font-semibold text-accent uppercase tracking-wider bg-accent/10 rounded-full mb-4">
             <?php echo t('pricing_badge'); ?>
