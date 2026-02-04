@@ -19,7 +19,6 @@ class DotShaderBackground {
         this.mouseTrailCanvas = null;
         this.mouseTrailCtx = null;
         this.mouseTrailTexture = null;
-        this.trailPoints = [];
 
         this.init();
     }
@@ -32,6 +31,12 @@ class DotShaderBackground {
         });
         this.renderer.setSize(this.container.offsetWidth, this.container.offsetHeight);
         this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        this.renderer.domElement.style.position = 'absolute';
+        this.renderer.domElement.style.top = '0';
+        this.renderer.domElement.style.left = '0';
+        this.renderer.domElement.style.width = '100%';
+        this.renderer.domElement.style.height = '100%';
+        this.renderer.domElement.style.pointerEvents = 'none';
         this.container.appendChild(this.renderer.domElement);
 
         // Create scene and camera
@@ -50,10 +55,10 @@ class DotShaderBackground {
         this.mesh = new THREE.Mesh(geometry, this.material);
         this.scene.add(this.mesh);
 
-        // Event listeners
+        // Event listeners - track on WINDOW level
         window.addEventListener('resize', () => this.onResize());
-        this.container.addEventListener('mousemove', (e) => this.onMouseMove(e));
-        this.container.addEventListener('touchmove', (e) => this.onTouchMove(e));
+        window.addEventListener('mousemove', (e) => this.onMouseMove(e));
+        window.addEventListener('touchmove', (e) => this.onTouchMove(e), { passive: true });
 
         // Start animation
         this.animate();
@@ -61,11 +66,11 @@ class DotShaderBackground {
 
     createMouseTrailTexture() {
         this.mouseTrailCanvas = document.createElement('canvas');
-        this.mouseTrailCanvas.width = 512;
-        this.mouseTrailCanvas.height = 512;
+        this.mouseTrailCanvas.width = 256;
+        this.mouseTrailCanvas.height = 256;
         this.mouseTrailCtx = this.mouseTrailCanvas.getContext('2d');
         this.mouseTrailCtx.fillStyle = '#000000';
-        this.mouseTrailCtx.fillRect(0, 0, 512, 512);
+        this.mouseTrailCtx.fillRect(0, 0, 256, 256);
 
         this.mouseTrailTexture = new THREE.CanvasTexture(this.mouseTrailCanvas);
         this.mouseTrailTexture.needsUpdate = true;
@@ -75,42 +80,42 @@ class DotShaderBackground {
         const ctx = this.mouseTrailCtx;
         const canvas = this.mouseTrailCanvas;
 
-        // Fade existing trail
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.03)';
+        // Slow fade for longer trail
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.02)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // Add new point
+        // Calculate position in canvas space
         const x = this.mouse.x * canvas.width;
         const y = (1 - this.mouse.y) * canvas.height;
 
-        // Draw bright spot at mouse position
-        const gradient = ctx.createRadialGradient(x, y, 0, x, y, 50);
-        gradient.addColorStop(0, 'rgba(255, 255, 255, 0.8)');
-        gradient.addColorStop(0.5, 'rgba(255, 255, 255, 0.2)');
+        // Draw bright spot at mouse position - LARGER and BRIGHTER
+        const gradient = ctx.createRadialGradient(x, y, 0, x, y, 80);
+        gradient.addColorStop(0, 'rgba(255, 255, 255, 1.0)');
+        gradient.addColorStop(0.3, 'rgba(255, 255, 255, 0.6)');
+        gradient.addColorStop(0.6, 'rgba(255, 255, 255, 0.2)');
         gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
 
         ctx.fillStyle = gradient;
         ctx.beginPath();
-        ctx.arc(x, y, 50, 0, Math.PI * 2);
+        ctx.arc(x, y, 80, 0, Math.PI * 2);
         ctx.fill();
 
         this.mouseTrailTexture.needsUpdate = true;
     }
 
     createShaderMaterial() {
-        // Vertex shader
         const vertexShader = `
             void main() {
                 gl_Position = vec4(position.xy, 0.0, 1.0);
             }
         `;
 
-        // Fragment shader
         const fragmentShader = `
             uniform float time;
             uniform vec2 resolution;
             uniform vec3 dotColor;
             uniform vec3 bgColor;
+            uniform vec3 accentColor;
             uniform sampler2D mouseTrail;
             uniform float rotation;
             uniform float gridSize;
@@ -143,34 +148,38 @@ class DotShaderBackground {
                 vec2 gridUv = fract(rotatedUv * gridSize);
                 vec2 gridUvCenterInScreenCoords = rotate((floor(rotatedUv * gridSize) + 0.5) / gridSize, -rotation);
 
-                // Calculate distance from the center of each cell
-                float baseDot = sdfCircle(gridUv, 0.25);
-
-                // Screen mask
-                float screenMask = smoothstep(0.0, 1.0, 1.0 - uv.y);
+                // Screen mask - gradient from bottom-right
                 vec2 centerDisplace = vec2(0.7, 1.1);
                 float circleMaskCenter = length(uv - centerDisplace);
-                float circleMaskFromCenter = smoothstep(0.5, 1.0, circleMaskCenter);
+                float circleMaskFromCenter = smoothstep(0.3, 1.2, circleMaskCenter);
                 
-                float combinedMask = screenMask * circleMaskFromCenter;
-                float circleAnimatedMask = sin(time * 2.0 + circleMaskCenter * 10.0);
+                // Animated wave
+                float circleAnimatedMask = sin(time * 1.5 + circleMaskCenter * 8.0) * 0.5 + 0.5;
 
-                // Mouse trail effect
-                float mouseInfluence = texture2D(mouseTrail, gridUvCenterInScreenCoords).r;
+                // Mouse trail effect - SAMPLE THE TEXTURE
+                float mouseInfluence = texture2D(mouseTrail, uv).r;
                 
-                float scaleInfluence = max(mouseInfluence * 0.5, circleAnimatedMask * 0.3);
+                // Combine influences - mouse effect is STRONGER
+                float scaleInfluence = mouseInfluence * 2.0 + circleAnimatedMask * 0.3;
 
-                // Create dots with animated scale
-                float dotSize = min(pow(circleMaskCenter, 2.0) * 0.3, 0.3);
+                // Base dot size based on distance from corner
+                float baseDotSize = min(pow(circleMaskCenter, 1.5) * 0.25, 0.25);
+                
+                // Scale dots based on mouse + animation
+                float dotSize = baseDotSize * (1.0 + scaleInfluence * 0.8);
 
-                float sdfDot = sdfCircle(gridUv, dotSize * (1.0 + scaleInfluence * 0.5));
+                float sdfDot = sdfCircle(gridUv, dotSize);
+                float smoothDot = smoothstep(0.02, 0.0, sdfDot);
 
-                float smoothDot = smoothstep(0.05, 0.0, sdfDot);
+                // Opacity boost from mouse
+                float opacityBoost = mouseInfluence * 8.0 + circleAnimatedMask * 0.3;
+                float finalOpacity = dotOpacity * (1.0 + opacityBoost);
 
-                float opacityInfluence = max(mouseInfluence * 50.0, circleAnimatedMask * 0.5);
+                // Color: blend between white and accent based on mouse
+                vec3 dotFinalColor = mix(dotColor, accentColor, mouseInfluence * 0.8);
 
-                // Mix background color with dot color
-                vec3 composition = mix(bgColor, dotColor, smoothDot * combinedMask * dotOpacity * (1.0 + opacityInfluence));
+                // Final composition
+                vec3 composition = mix(bgColor, dotFinalColor, smoothDot * circleMaskFromCenter * finalOpacity);
 
                 gl_FragColor = vec4(composition, 1.0);
             }
@@ -182,10 +191,11 @@ class DotShaderBackground {
                 resolution: { value: new THREE.Vector2(this.container.offsetWidth, this.container.offsetHeight) },
                 dotColor: { value: new THREE.Color('#FFFFFF') },
                 bgColor: { value: new THREE.Color('#0a0a0a') },
+                accentColor: { value: new THREE.Color('#ec4899') },
                 mouseTrail: { value: this.mouseTrailTexture },
                 rotation: { value: 0 },
-                gridSize: { value: 80 },
-                dotOpacity: { value: 0.04 }
+                gridSize: { value: 60 },
+                dotOpacity: { value: 0.08 }
             },
             vertexShader,
             fragmentShader
@@ -194,15 +204,19 @@ class DotShaderBackground {
 
     onMouseMove(e) {
         const rect = this.container.getBoundingClientRect();
-        this.mouseTarget.x = (e.clientX - rect.left) / rect.width;
-        this.mouseTarget.y = 1 - (e.clientY - rect.top) / rect.height;
+
+        // Only update if mouse is in the hero section area
+        if (e.clientY < rect.bottom) {
+            this.mouseTarget.x = e.clientX / window.innerWidth;
+            this.mouseTarget.y = 1 - (e.clientY / rect.height);
+        }
     }
 
     onTouchMove(e) {
         if (e.touches.length > 0) {
             const rect = this.container.getBoundingClientRect();
-            this.mouseTarget.x = (e.touches[0].clientX - rect.left) / rect.width;
-            this.mouseTarget.y = 1 - (e.touches[0].clientY - rect.top) / rect.height;
+            this.mouseTarget.x = e.touches[0].clientX / window.innerWidth;
+            this.mouseTarget.y = 1 - (e.touches[0].clientY / rect.height);
         }
     }
 
@@ -217,9 +231,9 @@ class DotShaderBackground {
     animate() {
         requestAnimationFrame(() => this.animate());
 
-        // Smooth mouse interpolation
-        this.mouse.x += (this.mouseTarget.x - this.mouse.x) * 0.1;
-        this.mouse.y += (this.mouseTarget.y - this.mouse.y) * 0.1;
+        // Smooth mouse interpolation - faster response
+        this.mouse.x += (this.mouseTarget.x - this.mouse.x) * 0.15;
+        this.mouse.y += (this.mouseTarget.y - this.mouse.y) * 0.15;
 
         // Update mouse trail
         this.updateMouseTrail();
@@ -234,7 +248,6 @@ class DotShaderBackground {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
-    // Check if Three.js is loaded
     if (typeof THREE === 'undefined') {
         console.warn('Three.js not loaded, dot shader background disabled');
         return;
