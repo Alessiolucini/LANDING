@@ -88,10 +88,14 @@ include 'includes/header.php';
         <div class="grid md:grid-cols-3 gap-8">
             <!-- Step 1 -->
             <div class="group relative h-full">
-                <div class="absolute inset-0 bg-gradient-to-r from-accent via-primary to-accent rounded-2xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                <div class="relative h-full bg-dark-800 ring-1 ring-white/10 rounded-2xl p-8 flex flex-col overflow-hidden">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-accent via-primary to-accent rounded-2xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200">
+                </div>
+                <div
+                    class="relative h-full bg-dark-800 ring-1 ring-white/10 rounded-2xl p-8 flex flex-col overflow-hidden">
                     <div class="absolute -right-6 -top-6 text-9xl font-bold text-white/5 select-none z-0">1</div>
-                    <div class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6 z-10 shadow-lg shadow-accent/20 group-hover:scale-110 transition-transform duration-300">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6 z-10 shadow-lg shadow-accent/20 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-cloud-upload-alt text-2xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3 z-10"><?php echo t('how_step1_title'); ?></h3>
@@ -100,11 +104,15 @@ include 'includes/header.php';
             </div>
 
             <!-- Step 2 -->
-             <div class="group relative h-full">
-                <div class="absolute inset-0 bg-gradient-to-r from-accent via-primary to-accent rounded-2xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                <div class="relative h-full bg-dark-800 ring-1 ring-white/10 rounded-2xl p-8 flex flex-col overflow-hidden">
+            <div class="group relative h-full">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-accent via-primary to-accent rounded-2xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200">
+                </div>
+                <div
+                    class="relative h-full bg-dark-800 ring-1 ring-white/10 rounded-2xl p-8 flex flex-col overflow-hidden">
                     <div class="absolute -right-6 -top-6 text-9xl font-bold text-white/5 select-none z-0">2</div>
-                    <div class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6 z-10 shadow-lg shadow-accent/20 group-hover:scale-110 transition-transform duration-300">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6 z-10 shadow-lg shadow-accent/20 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-brain text-2xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3 z-10"><?php echo t('how_step2_title'); ?></h3>
@@ -113,11 +121,15 @@ include 'includes/header.php';
             </div>
 
             <!-- Step 3 -->
-             <div class="group relative h-full">
-                <div class="absolute inset-0 bg-gradient-to-r from-accent via-primary to-accent rounded-2xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                <div class="relative h-full bg-dark-800 ring-1 ring-white/10 rounded-2xl p-8 flex flex-col overflow-hidden">
+            <div class="group relative h-full">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-accent via-primary to-accent rounded-2xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200">
+                </div>
+                <div
+                    class="relative h-full bg-dark-800 ring-1 ring-white/10 rounded-2xl p-8 flex flex-col overflow-hidden">
                     <div class="absolute -right-6 -top-6 text-9xl font-bold text-white/5 select-none z-0">3</div>
-                    <div class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6 z-10 shadow-lg shadow-accent/20 group-hover:scale-110 transition-transform duration-300">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6 z-10 shadow-lg shadow-accent/20 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-file-pdf text-2xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3 z-10"><?php echo t('how_step3_title'); ?></h3>
@@ -126,11 +138,13 @@ include 'includes/header.php';
             </div>
         </div>
 
-        <!-- Workflow Image -->
-        <div class="mt-16">
-            <img src="assets/images/workflow_diagram.png" alt="Flujo de trabajo TransiQ"
-                class="w-full max-w-4xl mx-auto rounded-xl">
-        </div>
+    <!-- Concept 2: Holographic 3D Visualization -->
+    <div class="mt-24 relative w-full opacity-90 hover:opacity-100 transition-opacity duration-500">
+        <div class="absolute -inset-1 bg-gradient-to-r from-accent/20 to-blue-500/20 rounded-2xl blur-xl opacity-20"></div>
+        <img src="assets/images/holographic_flow.png" alt="AI Transformation Process"
+            class="relative w-full max-w-5xl mx-auto rounded-2xl border border-white/5 shadow-2xl">
+    </div>
+
     </div>
 </section>
 
