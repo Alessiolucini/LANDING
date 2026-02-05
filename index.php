@@ -155,11 +155,14 @@ include 'includes/header.php';
 
         <!-- Concept 2: Holographic 3D Visualization -->
         <div class="mt-24 relative w-full opacity-90 hover:opacity-100 transition-opacity duration-500 z-10">
+            <!-- Ambient Glow behind -->
             <div
-                class="absolute -inset-1 bg-gradient-to-r from-accent/20 to-blue-500/20 rounded-2xl blur-xl opacity-20">
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-accent/20 blur-[100px] rounded-full">
             </div>
+
             <img src="assets/images/holographic_flow.png" alt="AI Transformation Process"
-                class="relative w-full max-w-5xl mx-auto rounded-2xl border border-white/5 shadow-2xl">
+                class="relative w-full max-w-5xl mx-auto rounded-2xl shadow-2xl"
+                style="-webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%); mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%);">
         </div>
 
 
