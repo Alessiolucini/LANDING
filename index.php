@@ -89,58 +89,71 @@ include 'includes/header.php';
             <!-- Step 1 -->
             <div class="relative">
                 <div
-                    class="bg-[#1E1E1E] rounded-2xl p-8 border border-white/5 hover:border-accent/30 transition-all duration-300 h-full group">
+                    class="bg-gradient-to-br from-white/10 to-transparent backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-[0_0_15px_rgba(236,72,153,0.15)] hover:shadow-[0_0_25px_rgba(236,72,153,0.4)] hover:border-accent/60 transition-all duration-300 h-full group relative overflow-hidden">
                     <div
-                        class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-cloud-upload-alt text-2xl text-white"></i>
+                        class="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     </div>
-                    <div
-                        class="absolute -top-3 -right-3 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-sm font-bold text-white">
-                        1</div>
-                    <h3 class="text-xl font-semibold mb-3"><?php echo t('how_step1_title'); ?></h3>
-                    <p class="text-gray-400"><?php echo t('how_step1_desc'); ?></p>
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-cloud-upload-alt text-2xl text-white"></i>
+                        </div>
+                        <div
+                            class="absolute -top-3 -right-3 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-sm font-bold text-white">
+                            1</div>
+                        <h3 class="text-xl font-semibold mb-3"><?php echo t('how_step1_title'); ?></h3>
+                        <p class="text-gray-400"><?php echo t('how_step1_desc'); ?></p>
+                    </div>
                 </div>
             </div>
 
             <!-- Step 2 -->
             <div class="relative">
                 <div
-                    class="bg-[#1E1E1E] rounded-2xl p-8 border border-white/5 hover:border-accent/30 transition-all duration-300 h-full group">
+                    class="bg-gradient-to-br from-white/10 to-transparent backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-[0_0_15px_rgba(236,72,153,0.15)] hover:shadow-[0_0_25px_rgba(236,72,153,0.4)] hover:border-accent/60 transition-all duration-300 h-full group relative overflow-hidden">
                     <div
-                        class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-brain text-2xl text-white"></i>
+                        class="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-brain text-2xl text-white"></i>
+                        </div>
+                        <div
+                            class="absolute -top-3 -right-3 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-sm font-bold text-white">
+                            2</div>
+                        <h3 class="text-xl font-semibold mb-3"><?php echo t('how_step2_title'); ?></h3>
+                        <p class="text-gray-400"><?php echo t('how_step2_desc'); ?></p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative">
                     <div
-                        class="absolute -top-3 -right-3 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-sm font-bold text-white">
-                        2</div>
-                    <h3 class="text-xl font-semibold mb-3"><?php echo t('how_step2_title'); ?></h3>
-                    <p class="text-gray-400"><?php echo t('how_step2_desc'); ?></p>
+                        class="bg-gradient-to-br from-white/10 to-transparent backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-[0_0_15px_rgba(236,72,153,0.15)] hover:shadow-[0_0_25px_rgba(236,72,153,0.4)] hover:border-accent/60 transition-all duration-300 h-full group relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-file-pdf text-2xl text-white"></i>
+                            </div>
+                            <div
+                                class="absolute -top-3 -right-3 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-sm font-bold text-white">
+                                3</div>
+                            <h3 class="text-xl font-semibold mb-3"><?php echo t('how_step3_title'); ?></h3>
+                            <p class="text-gray-400"><?php echo t('how_step3_desc'); ?></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workflow Image -->
+                <div class="mt-16">
+                    <img src="assets/images/workflow_diagram.png" alt="Flujo de trabajo TransiQ"
+                        class="w-full max-w-4xl mx-auto rounded-xl">
                 </div>
             </div>
-
-            <!-- Step 3 -->
-            <div class="relative">
-                <div
-                    class="bg-[#1E1E1E] rounded-2xl p-8 border border-white/5 hover:border-accent/30 transition-all duration-300 h-full group">
-                    <div
-                        class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-file-pdf text-2xl text-white"></i>
-                    </div>
-                    <div
-                        class="absolute -top-3 -right-3 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-sm font-bold text-white">
-                        3</div>
-                    <h3 class="text-xl font-semibold mb-3"><?php echo t('how_step3_title'); ?></h3>
-                    <p class="text-gray-400"><?php echo t('how_step3_desc'); ?></p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Workflow Image -->
-        <div class="mt-16">
-            <img src="assets/images/workflow_diagram.png" alt="Flujo de trabajo TransiQ"
-                class="w-full max-w-4xl mx-auto rounded-xl">
-        </div>
-    </div>
 </section>
 
 <!-- Por qué TransiQ Section -->
