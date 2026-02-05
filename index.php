@@ -60,7 +60,7 @@ include 'includes/header.php';
                 <div
                     class="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-2xl blur-2xl opacity-50">
                 </div>
-                <img src="assets/images/hero_mockup.png" alt="TransiQ Dashboard - CMR Preview"
+                <img src="assets/images/hero_glass.png" alt="TransiQ Dashboard - AI Interface"
                     class="relative w-full rounded-xl shadow-2xl border border-white/10">
             </div>
         </div>
