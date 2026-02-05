@@ -88,7 +88,7 @@ include 'includes/header.php';
         <div class="grid md:grid-cols-3 gap-8">
             <!-- Step 1 -->
             <div class="relative">
-                <div class="bg-dark-700 rounded-2xl p-8 card-glow border border-white/5 h-full">
+                <div class="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 shadow-2xl hover:border-accent/30 transition-all duration-300 h-full group">
                     <div
                         class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6">
                         <i class="fas fa-cloud-upload-alt text-2xl text-white"></i>
@@ -103,7 +103,7 @@ include 'includes/header.php';
 
             <!-- Step 2 -->
             <div class="relative">
-                <div class="bg-dark-700 rounded-2xl p-8 card-glow border border-white/5 h-full">
+                <div class="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 shadow-2xl hover:border-accent/30 transition-all duration-300 h-full group">
                     <div
                         class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6">
                         <i class="fas fa-brain text-2xl text-white"></i>
@@ -118,7 +118,7 @@ include 'includes/header.php';
 
             <!-- Step 3 -->
             <div class="relative">
-                <div class="bg-dark-700 rounded-2xl p-8 card-glow border border-white/5 h-full">
+                <div class="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 shadow-2xl hover:border-accent/30 transition-all duration-300 h-full group">
                     <div
                         class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6">
                         <i class="fas fa-file-pdf text-2xl text-white"></i>
