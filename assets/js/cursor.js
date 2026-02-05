@@ -12,20 +12,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add styles dynamically
     const style = document.createElement('style');
     style.textContent = `
-        body {
-            cursor: none; /* Hide default cursor */
-        }
-        
-        a, button, input, [role="button"] {
-            cursor: none; /* Ensure it stays hidden on interactive elements */
+        /* Hide default cursor only on desktop */
+        @media (min-width: 1024px) {
+            body {
+                cursor: none;
+            }
+            a, button, input, [role="button"] {
+                cursor: none;
+            }
         }
 
         #custom-cursor {
+            display: none; /* Hidden by default (mobile) */
             position: fixed;
             top: 0;
             left: 0;
-            width: 30px;
-            height: 30px;
+            width: 24px;
+            height: 24px;
             background-color: #ec4899; /* Pink accent contrast */
             border-radius: 50%;
             pointer-events: none;
@@ -33,13 +36,20 @@ document.addEventListener('DOMContentLoaded', () => {
             transform: translate(-50%, -50%);
             transition: width 0.2s, height 0.2s, background-color 0.2s, transform 0.05s linear;
             box-shadow: 0 0 15px rgba(236, 72, 153, 0.6);
-            mix-blend-mode: difference; /* Ensures visible contrast on all backgrounds */
+            mix-blend-mode: difference;
+        }
+
+        /* Show cursor only on desktop */
+        @media (min-width: 1024px) {
+            #custom-cursor {
+                display: block;
+            }
         }
 
         /* Hover effect */
         body.hovering #custom-cursor {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             background-color: #fff;
             mix-blend-mode: normal;
             opacity: 0.5;
