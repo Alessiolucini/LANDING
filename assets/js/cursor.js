@@ -27,15 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
             position: fixed;
             top: 0;
             left: 0;
-            width: 24px;
-            height: 24px;
+            width: 10px;
+            height: 10px;
             background-color: #ec4899; /* Pink accent contrast */
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
             transform: translate(-50%, -50%);
             transition: width 0.2s, height 0.2s, background-color 0.2s, transform 0.05s linear;
-            box-shadow: 0 0 15px rgba(236, 72, 153, 0.6);
+            box-shadow: 0 0 10px rgba(236, 72, 153, 0.6);
             mix-blend-mode: difference;
         }
 
@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         /* Hover effect */
         body.hovering #custom-cursor {
-            width: 40px;
-            height: 40px;
+            width: 24px;
+            height: 24px;
             background-color: #fff;
             mix-blend-mode: normal;
             opacity: 0.5;
