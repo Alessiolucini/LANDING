@@ -138,15 +138,60 @@ include 'includes/header.php';
             </div>
         </div>
 
-    <!-- Concept 2: Holographic 3D Visualization -->
-    <div class="mt-24 relative w-full opacity-90 hover:opacity-100 transition-opacity duration-500">
-        <div class="absolute -inset-1 bg-gradient-to-r from-accent/20 to-blue-500/20 rounded-2xl blur-xl opacity-20"></div>
-        <img src="assets/images/holographic_flow.png" alt="AI Transformation Process"
-            class="relative w-full max-w-5xl mx-auto rounded-2xl border border-white/5 shadow-2xl">
-    </div>
+        <!-- Concept 1: Neon Pipeline Connectors (Background Layer) -->
+        <div
+            class="hidden md:block absolute top-[40%] left-0 w-full -translate-y-1/2 h-2 pointer-events-none z-0 overflow-visible">
+            <!-- Connection 1-2 -->
+            <div
+                class="absolute left-[33%] top-1/2 w-[34%] h-[2px] bg-gradient-to-r from-accent/0 via-accent/50 to-accent/0 blur-[2px]">
+            </div>
+            <div
+                class="absolute left-[33%] top-1/2 w-[34%] h-[1px] bg-gradient-to-r from-accent/0 via-accent to-accent/0 opacity-50">
+            </div>
+            <!-- Connection moving particle -->
+            <div class="absolute left-[33%] top-1/2 w-2 h-2 bg-white rounded-full blur-[2px] animate-flow-particle">
+            </div>
+        </div>
+
+        <!-- Concept 2: Holographic 3D Visualization -->
+        <div class="mt-24 relative w-full opacity-90 hover:opacity-100 transition-opacity duration-500 z-10">
+            <div
+                class="absolute -inset-1 bg-gradient-to-r from-accent/20 to-blue-500/20 rounded-2xl blur-xl opacity-20">
+            </div>
+            <img src="assets/images/holographic_flow.png" alt="AI Transformation Process"
+                class="relative w-full max-w-5xl mx-auto rounded-2xl border border-white/5 shadow-2xl">
+        </div>
+
 
     </div>
 </section>
+
+<style>
+    @keyframes flow-particle {
+        0% {
+            left: 30%;
+            opacity: 0;
+        }
+
+        30% {
+            opacity: 1;
+        }
+
+        70% {
+            opacity: 1;
+        }
+
+        100% {
+            left: 70%;
+            opacity: 0;
+        }
+    }
+
+    .animate-flow-particle {
+        animation: flow-particle 3s infinite linear;
+        box-shadow: 0 0 10px #fff, 0 0 20px #ec4899;
+    }
+</style>
 
 <!-- Por qué TransiQ Section -->
 <section id="por-que-transiq" class="relative py-20 lg:py-32">
