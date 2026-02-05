@@ -24,25 +24,25 @@ document.addEventListener('DOMContentLoaded', () => {
             position: fixed;
             top: 0;
             left: 0;
-            width: 12px;
-            height: 12px;
+            width: 30px;
+            height: 30px;
             background-color: #ec4899; /* Pink accent contrast */
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
             transform: translate(-50%, -50%);
             transition: width 0.2s, height 0.2s, background-color 0.2s, transform 0.05s linear;
-            box-shadow: 0 0 10px rgba(236, 72, 153, 0.5);
+            box-shadow: 0 0 15px rgba(236, 72, 153, 0.6);
             mix-blend-mode: difference; /* Ensures visible contrast on all backgrounds */
         }
 
         /* Hover effect */
         body.hovering #custom-cursor {
-            width: 20px;
-            height: 20px;
+            width: 50px;
+            height: 50px;
             background-color: #fff;
             mix-blend-mode: normal;
-            opacity: 0.8;
+            opacity: 0.5;
         }
     `;
     document.head.appendChild(style);
