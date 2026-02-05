@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://transiq.net/sitemap.xml
