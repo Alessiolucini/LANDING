@@ -59,22 +59,41 @@ $translations = [
     'why_kpi_3_label' => 'Admin time',
 
     // Features
-    'features_badge' => 'Features',
-    'features_title_1' => 'Everything you',
-    'features_title_2' => 'need',
-    'features_subtitle' => 'Tools designed to optimize your document workflow.',
-    'feature_1_title' => 'Automatic extraction',
-    'feature_1_desc' => 'AI that extracts data from proformas: supplier, customer, VIN, models.',
-    'feature_2_title' => 'Preview before generating',
-    'feature_2_desc' => 'Review and edit the extracted data before creating the final document.',
-    'feature_3_title' => 'Multi-CMR per order',
-    'feature_3_desc' => 'Generate multiple CMRs from a single order with many vehicles.',
-    'feature_4_title' => 'Reorganize vehicles',
-    'feature_4_desc' => 'Sort and group vehicles before generating each CMR.',
-    'feature_5_title' => 'Document archive',
-    'feature_5_desc' => 'Access your complete history of generated CMRs at any time.',
-    'feature_6_title' => 'PDF / Download / Send',
-    'feature_6_desc' => 'Download as PDF or send the CMR directly from the platform.',
+    'features_badge' => 'TRANSiQ Features',
+    'features_title_1' => 'Power',
+    'features_title_2' => 'Without Limits',
+    'features_subtitle' => 'A complete ecosystem to automate every aspect of your document logistics.',
+
+    // Feature 1
+    'feature_1_title' => 'AI CMR Automation',
+    'feature_1_desc' => 'Transforms proformas into official CMRs in seconds. AI reads the document, identifies sender, receiver, and cars, filling everything automatically.',
+    // Feature 2
+    'feature_2_title' => 'Mobile Computer Vision',
+    'feature_2_desc' => 'Digitize paper documents from the yard using your smartphone. Take a photo and AI extracts data as if it were a digital file.',
+    // Feature 3
+    'feature_3_title' => 'Vehicle Intelligence (VIN)',
+    'feature_3_desc' => 'By entering the VIN, the system instantly identifies Make and Model from a database of over 100 manufacturers and learns from new models.',
+    // Feature 4
+    'feature_4_title' => 'Smart Logistics (Packing)',
+    'feature_4_desc' => 'Calculates how many carriers are needed based on car sizes (S, M, L, XL) and automatically splits documents into separate CMRs.',
+    // Feature 5
+    'feature_5_title' => 'Multi-Load Point Management',
+    'feature_5_desc' => 'Separate vehicles to be picked up at different points with a click, ensuring each CMR has the correct loading point.',
+    // Feature 6
+    'feature_6_title' => 'Protected Preview',
+    'feature_6_desc' => 'View CMR preview with protection watermark before consuming credits. Total security against unauthorized use.',
+    // Feature 7
+    'feature_7_title' => 'Multilingual Platform',
+    'feature_7_desc' => 'Full interface and support in 6 languages (IT, EN, ES, FR, DE, PT). Everything adapts perfectly to your language.',
+    // Feature 8
+    'feature_8_title' => 'Flexible Credit System',
+    'feature_8_desc' => 'Pay only for what you use. Quick top-ups to cover necessary extras without changing subscription plans.',
+    // Feature 9
+    'feature_9_title' => 'Team Management',
+    'feature_9_desc' => 'Invite employees and manage licenses. Each member has their own access but uses shared company credits.',
+    // Feature 10
+    'feature_10_title' => 'Dashboard & Analytics',
+    'feature_10_desc' => 'Real-time charts on generated CMRs, time savings, and business performance. Total control for the admin.',
 
     // CTA Section
     'cta_title_1' => 'Stop correcting CMR every day.',

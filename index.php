@@ -302,59 +302,100 @@ include 'includes/header.php';
 
         <!-- Features Grid -->
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Feature 1 -->
+            <!-- Feature 1: Automazione CMR con Intelligenza Artificiale -->
             <div class="bg-dark-700 rounded-2xl p-6 card-glow border border-white/5">
                 <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                    <i class="fas fa-magic text-xl text-accent"></i>
+                    <i class="fas fa-robot text-xl text-accent"></i>
                 </div>
                 <h3 class="text-lg font-semibold mb-2"><?php echo t('feature_1_title'); ?></h3>
                 <p class="text-sm text-gray-400"><?php echo t('feature_1_desc'); ?></p>
             </div>
 
-            <!-- Feature 2 -->
+            <!-- Feature 2: Visione Artificiale Mobile -->
             <div class="bg-dark-700 rounded-2xl p-6 card-glow border border-white/5">
                 <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                    <i class="fas fa-eye text-xl text-accent"></i>
+                    <i class="fas fa-camera text-xl text-accent"></i>
                 </div>
                 <h3 class="text-lg font-semibold mb-2"><?php echo t('feature_2_title'); ?></h3>
                 <p class="text-sm text-gray-400"><?php echo t('feature_2_desc'); ?></p>
             </div>
 
-            <!-- Feature 3 -->
+            <!-- Feature 3: Intelligenza dei Veicoli (VIN Engine) -->
             <div class="bg-dark-700 rounded-2xl p-6 card-glow border border-white/5">
                 <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                    <i class="fas fa-layer-group text-xl text-accent"></i>
+                    <i class="fas fa-car text-xl text-accent"></i>
                 </div>
                 <h3 class="text-lg font-semibold mb-2"><?php echo t('feature_3_title'); ?></h3>
                 <p class="text-sm text-gray-400"><?php echo t('feature_3_desc'); ?></p>
             </div>
 
-            <!-- Feature 4 -->
+            <!-- Feature 4: Logistica Intelligente (Packing Engine) -->
             <div class="bg-dark-700 rounded-2xl p-6 card-glow border border-white/5">
                 <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                    <i class="fas fa-sort text-xl text-accent"></i>
+                    <i class="fas fa-truck-loading text-xl text-accent"></i>
                 </div>
                 <h3 class="text-lg font-semibold mb-2"><?php echo t('feature_4_title'); ?></h3>
                 <p class="text-sm text-gray-400"><?php echo t('feature_4_desc'); ?></p>
             </div>
 
-            <!-- Feature 5 -->
+            <!-- Feature 5: Gestione Punti di Carico Multipli -->
             <div class="bg-dark-700 rounded-2xl p-6 card-glow border border-white/5">
                 <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                    <i class="fas fa-archive text-xl text-accent"></i>
+                    <i class="fas fa-map-marker-alt text-xl text-accent"></i>
                 </div>
                 <h3 class="text-lg font-semibold mb-2"><?php echo t('feature_5_title'); ?></h3>
                 <p class="text-sm text-gray-400"><?php echo t('feature_5_desc'); ?></p>
             </div>
 
-            <!-- Feature 6 -->
+            <!-- Feature 6: Anteprima Protetta e Sicurezza -->
             <div class="bg-dark-700 rounded-2xl p-6 card-glow border border-white/5">
                 <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                    <i class="fas fa-download text-xl text-accent"></i>
+                    <i class="fas fa-shield-alt text-xl text-accent"></i>
                 </div>
                 <h3 class="text-lg font-semibold mb-2"><?php echo t('feature_6_title'); ?></h3>
                 <p class="text-sm text-gray-400"><?php echo t('feature_6_desc'); ?></p>
             </div>
+
+            <!-- Feature 7: Piattaforma Multilingue Totale -->
+            <div class="bg-dark-700 rounded-2xl p-6 card-glow border border-white/5">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <i class="fas fa-globe text-xl text-accent"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2"><?php echo t('feature_7_title'); ?></h3>
+                <p class="text-sm text-gray-400"><?php echo t('feature_7_desc'); ?></p>
+            </div>
+
+            <!-- Feature 8: Sistema di Crediti e Top-up Flessibile -->
+            <div class="bg-dark-700 rounded-2xl p-6 card-glow border border-white/5">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <i class="fas fa-coins text-xl text-accent"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2"><?php echo t('feature_8_title'); ?></h3>
+                <p class="text-sm text-gray-400"><?php echo t('feature_8_desc'); ?></p>
+            </div>
+
+            <!-- Feature 9: Gestione Team e Licenze -->
+            <div class="bg-dark-700 rounded-2xl p-6 card-glow border border-white/5">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <i class="fas fa-users text-xl text-accent"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2"><?php echo t('feature_9_title'); ?></h3>
+                <p class="text-sm text-gray-400"><?php echo t('feature_9_desc'); ?></p>
+            </div>
+
+            <!-- Feature 10: Dashboard & Analytics (centrata o full width se possibile, qui lascio in griglia) -->
+            <div class="bg-dark-700 rounded-2xl p-6 card-glow border border-white/5 sm:col-span-2 lg:col-span-3">
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-chart-line text-2xl text-accent"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2"><?php echo t('feature_10_title'); ?></h3>
+                        <p class="text-sm text-gray-400"><?php echo t('feature_10_desc'); ?></p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>

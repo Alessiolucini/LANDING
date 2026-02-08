@@ -59,22 +59,41 @@ $translations = [
     'why_kpi_3_label' => 'Tiempo admin',
 
     // Features
-    'features_badge' => 'Funcionalidades',
-    'features_title_1' => 'Todo lo que',
-    'features_title_2' => 'necesitas',
-    'features_subtitle' => 'Herramientas diseñadas para optimizar tu flujo de trabajo documental.',
-    'feature_1_title' => 'Extracción automática',
-    'feature_1_desc' => 'IA que extrae datos de proformas: proveedor, cliente, VIN, modelos.',
-    'feature_2_title' => 'Preview antes de generar',
-    'feature_2_desc' => 'Revisa y edita los datos extraídos antes de crear el documento final.',
-    'feature_3_title' => 'Multi-CMR por pedido',
-    'feature_3_desc' => 'Genera múltiples CMR desde un solo pedido con muchos vehículos.',
-    'feature_4_title' => 'Reorganiza vehículos',
-    'feature_4_desc' => 'Ordena y agrupa los vehículos antes de generar cada CMR.',
-    'feature_5_title' => 'Archivo de documentos',
-    'feature_5_desc' => 'Accede a tu historial completo de CMR generados en cualquier momento.',
-    'feature_6_title' => 'PDF / Descarga / Envío',
-    'feature_6_desc' => 'Descarga en PDF o envía directamente el CMR desde la plataforma.',
+    'features_badge' => 'Funcionalidades TRANSiQ',
+    'features_title_1' => 'Potencia',
+    'features_title_2' => 'Sin Límites',
+    'features_subtitle' => 'Un ecosistema completo para automatizar cada aspecto de tu logística documental.',
+
+    // Feature 1
+    'feature_1_title' => 'Automatización CMR con IA',
+    'feature_1_desc' => 'Transforma proformas en CMR oficiales en segundos. La IA lee el documento, identifica remitente, destinatario y autos, rellenando todo automáticamente.',
+    // Feature 2
+    'feature_2_title' => 'Visión Artificial Móvil',
+    'feature_2_desc' => 'Digitaliza documentos en papel desde la campa usando tu smartphone. Haz una foto y la IA extrae los datos como si fuera un archivo digital.',
+    // Feature 3
+    'feature_3_title' => 'Inteligencia de Vehículos',
+    'feature_3_desc' => 'Al introducir el VIN, el sistema identifica al instante Marca y Modelo de una base de datos de más de 100 fabricantes y aprende de nuevos modelos.',
+    // Feature 4
+    'feature_4_title' => 'Logística Inteligente (Packing)',
+    'feature_4_desc' => 'Calcula cuántos portavehículos se necesitan según las tallas de los autos (S, M, L, XL) y divide automáticamente los documentos en CMR separados.',
+    // Feature 5
+    'feature_5_title' => 'Gestión Puntos de Carga',
+    'feature_5_desc' => 'Separa con un clic los vehículos que se recogen en puntos diferentes, garantizando que cada CMR tenga el punto de carga correcto.',
+    // Feature 6
+    'feature_6_title' => 'Vista Previa Protegida',
+    'feature_6_desc' => 'Visualiza la vista previa del CMR con marca de agua de protección antes de consumir créditos. Seguridad total contra el uso no autorizado.',
+    // Feature 7
+    'feature_7_title' => 'Plataforma Multilingüe',
+    'feature_7_desc' => 'Interfaz y soporte completos en 6 idiomas (IT, EN, ES, FR, DE, PT). Todo se adapta perfectamente a tu idioma.',
+    // Feature 8
+    'feature_8_title' => 'Sistema Créditos Flexible',
+    'feature_8_desc' => 'Paga solo por lo que usas. Recargas rápidas para cubrir extras necesarios sin tener que cambiar de plan de suscripción.',
+    // Feature 9
+    'feature_9_title' => 'Gestión de Equipo',
+    'feature_9_desc' => 'Invita a empleados y gestiona licencias. Cada miembro tiene su propio acceso pero usa los créditos compartidos de la empresa.',
+    // Feature 10
+    'feature_10_title' => 'Panel y Analíticas',
+    'feature_10_desc' => 'Gráficos en tiempo real sobre CMR generados, ahorro de tiempo y rendimiento del negocio. Control total para el administrador.',
 
     // CTA Section
     'cta_title_1' => 'Deja de corregir CMR cada día.',
