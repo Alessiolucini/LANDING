@@ -185,10 +185,15 @@ class DotShaderBackground {
             }
         `;
 
+        // CORRECT: uniform 'resolution' must account for pixelRatio!
+        const pixelRatio = this.renderer.getPixelRatio();
+        const width = this.container.offsetWidth * pixelRatio;
+        const height = this.container.offsetHeight * pixelRatio;
+
         this.material = new THREE.ShaderMaterial({
             uniforms: {
                 time: { value: 0 },
-                resolution: { value: new THREE.Vector2(this.container.offsetWidth, this.container.offsetHeight) },
+                resolution: { value: new THREE.Vector2(width, height) },
                 dotColor: { value: new THREE.Color('#FFFFFF') },
                 bgColor: { value: new THREE.Color('#0a0a0a') },
                 accentColor: { value: new THREE.Color('#ec4899') },
@@ -224,8 +229,12 @@ class DotShaderBackground {
         const width = this.container.offsetWidth;
         const height = this.container.offsetHeight;
 
+        // Resize renderer checks devicePixelRatio internally
         this.renderer.setSize(width, height);
-        this.material.uniforms.resolution.value.set(width, height);
+
+        // Update shader uniforms using PHYSICAL pixels
+        const pixelRatio = this.renderer.getPixelRatio();
+        this.material.uniforms.resolution.value.set(width * pixelRatio, height * pixelRatio);
     }
 
     animate() {
