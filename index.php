@@ -35,7 +35,7 @@ include 'includes/header.php';
                         <i class="fas fa-rocket mr-2"></i>
                         <?php echo t('hero_btn_register'); ?>
                     </a>
-                    <a href="contacto.php"
+                    <a href="https://app.transiq.net/register" target="_blank"
                         class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white border border-white/20 rounded-xl hover:bg-white/5 transition-all">
                         <i class="fas fa-calendar-alt mr-2"></i>
                         <?php echo t('hero_btn_demo'); ?>

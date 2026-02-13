@@ -56,7 +56,7 @@
                     </li>
                 </ul>
                 <div class="mt-6">
-                    <a href="contacto.php"
+                    <a href="https://app.transiq.net/register" target="_blank"
                         class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-white btn-gradient rounded-lg">
                         <i class="fas fa-calendar-alt mr-2"></i>
                         <?php echo t('footer_btn_demo'); ?>
